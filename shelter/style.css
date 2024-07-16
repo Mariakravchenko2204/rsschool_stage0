@@ -1,0 +1,81 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+@font-face {
+    font-family: 'Georgia Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Georgia Regular'), url('./assets/fonts/georgia/georgia.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Georgia Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Georgia Italic'), url('./assets/fonts/georgia/georgiai.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Georgia Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Georgia Bold'), url('./assets/fonts/georgia/georgiab.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Georgia Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Georgia Bold Italic'), url('./assets/fonts/georgia/georgiaz.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Arial Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Arial Regular'), url('./assets/fonts/arial/ARIAL.woff') format('woff');
+}
+
+.header {
+    margin: 0 auto;
+    max-width: 1200px;
+    max-height: 60px;
+}
+.logo{
+    
+    max-width: 184px;
+    max-height: 60px;   
+    text-align: center;
+    align-items: middle;
+
+}
+
+.title {
+    font-family: 'Georgia Regular';
+    font-size: 32px;
+    line-height: 110%;
+    color: #F1CDB3;
+    letter-spacing: 6%;     
+    max-width: 184px;
+    max-height: 35px;     
+}
+
+.subtitle {
+    font-family: 'Arial Regular';
+    font-size: 13px;
+    line-height: auto;
+    /* color: #FFFFFF; */
+    letter-spacing: 10%;     
+    max-width: 179px;
+    max-height: 15px;
+}
