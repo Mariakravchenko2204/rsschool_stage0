@@ -1,5 +1,9 @@
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    width: 1280px;
+    margin: auto;
+
 }
 
 *,
@@ -7,6 +11,8 @@ html {
 *::after {
     box-sizing: inherit;
 }
+
+
 
 @font-face {
     font-family: 'Georgia Regular';
@@ -50,11 +56,21 @@ html {
     margin: 0 auto;
     max-width: 1200px;
     max-height: 60px;
+    display: flex;
+    /* flex-wrap: wrap;
+    flex: 0 0 auto; */
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 30px 40px 0;
+    position: absolute;
+    top: 30px;
+    width: 100%
 }
-.logo{
-    
+
+.logo {
+
     max-width: 184px;
-    max-height: 60px;   
+    max-height: 60px;
     text-align: center;
     align-items: middle;
 
@@ -65,17 +81,80 @@ html {
     font-size: 32px;
     line-height: 110%;
     color: #F1CDB3;
-    letter-spacing: 6%;     
+    letter-spacing: 6%;
     max-width: 184px;
-    max-height: 35px;     
+    max-height: 35px;
+    margin-bottom: 10px;
 }
 
 .subtitle {
     font-family: 'Arial Regular';
     font-size: 13px;
-    line-height: auto;
-    /* color: #FFFFFF; */
-    letter-spacing: 10%;     
+    font-weight: 400;
+    line-height: 14.95%;
+    color: #FFFFFF;
+    letter-spacing: 1px;
     max-width: 179px;
     max-height: 15px;
+}
+
+.nav-list {
+    display: flex;
+    /* flex-wrap: wrap;
+    flex: 0 0 auto; */
+    gap: 35px;
+    list-style-type: none;
+
+}
+
+.nav-item {
+    font-family: 'Arial Regular';
+    font-size: 15px;
+    line-height: 160%;
+
+
+}
+
+a {
+    text-decoration: none;
+    color: #CDCDCD;
+}
+
+.nav-item:first-child {
+    border-bottom: solid;
+    border-color: #F1CDB3;
+    color: #FAFAFA;
+}
+
+.not-only {
+    max-width: 1200px;
+    height: 908px;
+    background: url(../../assets/images/start-screen-gradient-background.jpg) no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.content {
+    align-self: center;
+    color: #CDCDCD;
+    margin-left: 31px;
+    width: 460px;
+    height: 322px;
+
+}
+
+#puppy {
+    width: 698px;
+    height: 728px;
+}
+
+h1{
+    font-family: 'Georgia Regular';
+    font-size: 44px;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 57.2px;
+    width: 310px;
+    height: 114px;
 }
