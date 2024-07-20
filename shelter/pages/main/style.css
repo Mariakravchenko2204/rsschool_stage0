@@ -1,9 +1,6 @@
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;
-    max-width: 1280px;
-    margin: auto;
-
 }
 
 *,
@@ -12,37 +9,11 @@ html {
     box-sizing: inherit;
 }
 
-
-
 @font-face {
     font-family: 'Georgia Regular';
     font-style: normal;
     font-weight: normal;
     src: local('Georgia Regular'), url('./assets/fonts/georgia/georgia.woff') format('woff');
-}
-
-
-@font-face {
-    font-family: 'Georgia Italic';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Georgia Italic'), url('./assets/fonts/georgia/georgiai.woff') format('woff');
-}
-
-
-@font-face {
-    font-family: 'Georgia Bold';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Georgia Bold'), url('./assets/fonts/georgia/georgiab.woff') format('woff');
-}
-
-
-@font-face {
-    font-family: 'Georgia Bold Italic';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Georgia Bold Italic'), url('./assets/fonts/georgia/georgiaz.woff') format('woff');
 }
 
 @font-face {
@@ -52,19 +23,24 @@ html {
     src: local('Arial Regular'), url('./assets/fonts/arial/ARIAL.woff') format('woff');
 }
 
-.header {
+/*header*/
 
+.header {
     width: 1200px;
     height: 60px;
-    display: flex;    
+    display: flex;
     align-items: flex-end;
     justify-content: space-between;
     margin: 30px 40px 0;
-    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    margin-top: -90px;
+}
 
 
-
-} 
 
 h1 {
     margin: 10px 0;
@@ -76,7 +52,7 @@ h1 {
     letter-spacing: 6%;
     max-width: 184px;
     max-height: 35px;
- 
+
 }
 
 .subtitle {
@@ -93,7 +69,7 @@ h1 {
 
 .nav-list {
     display: flex;
-    align-items: flex-end;   
+    align-items: flex-end;
     gap: 35px;
     list-style-type: none;
 }
@@ -102,8 +78,6 @@ h1 {
     font-family: 'Arial Regular';
     font-size: 15px;
     line-height: 160%;
-
-
 }
 
 a {
@@ -117,6 +91,8 @@ a {
     color: #FAFAFA;
 }
 
+/*not only*/
+
 .start_screen_content {
     position: relative;
     width: 1200px;
@@ -128,33 +104,33 @@ a {
     justify-content: space-between;
 }
 
-
+.wrapper_not_only {
+    background: url(../../assets/images/start-screen-background.jpg) no-repeat;
+    background-size: cover;
+    justify-content: center;
+    margin: 0 auto;
+}
 
 .not-only {
     width: 1280px;
     height: 908px;
-    background: url(../../assets/images/start-screen-gradient-background.jpg) no-repeat;
-    background-size: cover;
-
-
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .content {
     position: relative;
-    top: 163px;
     align-self: start;
     color: #CDCDCD;
+    top: 180px;
     margin-left: 31px;
     width: 460px;
     height: 322px;
-
-
 }
 
-#puppy {
+.puppy {
     width: 698px;
     height: 728px;
-
 }
 
 h2 {
@@ -168,7 +144,7 @@ h2 {
     margin: 0;
 }
 
-.subheading {    
+.subheading_not_only {
     font-family: 'Arial Regular';
     font-size: 15px;
     line-height: 24px;
@@ -178,13 +154,11 @@ h2 {
     margin-top: 42px;
 
 }
-
-.button_primary {
+a.button_make_friend {
     margin: 42px 0;
     font-family: 'Georgia Regular';
     font-size: 17px;
     font-weight: 400;
-
     width: 207px;
     height: 52px;
     top: 270px;
@@ -192,61 +166,52 @@ h2 {
     background-color: #F1CDB3;
     color: #292929;
     border-radius: 100px;
+    display: inline-block;
     margin-top: 42px;
+}
+
+.button_make_friend:hover {
+    background-color: #FDDCC4;
+    cursor: pointer;
+}
+
+/*about*/
+
+.about_wrapper {
+    background-color: #fff;
+    height: 588px;
+    display: flex;
+    align-items: center;
 }
 
 .about {
     margin: 0 auto;
     width: 1280px;
-    height: 588px;
-    top: 908px;
-
 
 }
 
 .about_content {
-    position: relative;
-    align-self: middle;
     width: 1200px;
     height: 408px;
-    top: 80px;
-    left: 40px;
     display: flex;
-    align-items: flex-end;
-
+    align-items: center;
+    justify-content: center;
+    gap: 120px;
 }
 
 .content_about {
     width: 430px;
     height: 380px;
-    position: absolute;
-    top: 14px;
-    align-self: start;
-    left: 595px;
 }
 
-
-
-
-#about_pets {
-    position: relative;
-    width: 300px;
-    height: 408px;
-    left: 175px;  
-
-}
-
-.subheading_about {
-    margin: 0;
-    width: inherit;
-    height: auto;
+.subheading {
     font-family: 'Arial Regular';
     font-size: 15px;
     font-weight: 400;
     line-height: 24px;
     text-align: left;
     color: #4C4C4C;
-    margin-bottom: 25px;
+    margin: 25px 0;
 }
 
 h3 {
@@ -260,5 +225,355 @@ h3 {
     line-height: 45.5px;
     letter-spacing: 0.06em;
     text-align: left;
-    margin-bottom: 25px;
+
+}
+
+/*our friends*/
+
+.our_friends_wrapper {
+    background-color: #F6F6F6;
+    height: 877px;
+}
+
+.pets {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    align-items: center;
+}
+
+.pets_content {
+    margin: 0 0;
+    position: relative;
+    width: 1200px;
+    height: 697px;
+    top: 80px;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+
+}
+
+.slider {
+    display: flex;
+    gap: 90px;
+}
+
+
+.pets_content h3 {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card {
+    width: 270px;
+    height: 435px;
+    padding: 0px 0px 30px 0px;
+    gap: 30px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FAFAFA;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.card:hover {
+    cursor: pointer;
+    background-color: #fff
+}
+
+.pet_name {
+    font-family: 'Georgia Regular';
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 22.72px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: #545454
+}
+
+.button_secondary {
+    font-family: 'Georgia Regular';
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 22.1px;
+    letter-spacing: 0.06em;
+    width: 187px;
+    height: 52px;
+    gap: 10px;
+    border-radius: 100px;
+    border: 2px solid #F1CDB3;
+}
+
+.card:hover>.button_secondary {
+    cursor: pointer;
+    background-color: #FDDCC4;
+}
+
+.arrow {
+    align-self: center;
+    width: 52px;
+    height: 52px;
+    padding: 21px 17px 21px 17px;
+    margin-right: 53px;
+    border-radius: 100px;
+    border: 2px solid #F1CDB3;
+}
+
+.arrow-left {
+    margin-right: 53px;
+}
+
+.arrow-right {
+    margin-left: 53px;
+}
+
+.go_to_know_the_rest {
+    font-family: 'Georgia Regular';
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-align: left;
+    width: 261px;
+    height: 52px;
+    padding: 13px 43px 13px 43px;  
+    border-radius: 100px;
+    margin: 0 auto;
+    background-color: #F1CDB3;
+    border: none;
+}
+
+.go_to_know_the_rest:hover {
+    cursor: pointer;
+    background-color: #FDDCC4;
+}
+
+/* Help*/
+
+
+.help {
+    width: 1280px;
+    height: 611px;
+    top: 2373px;
+    padding: 80px 40px 100px 40px;
+
+    margin: 0 auto;
+}
+
+.help_content {
+    width: 1200px;
+    height: 431px;
+    top: 80px;
+    left: 40px;
+    padding: 0px 87px 0px 87px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.help_content h3 {
+    width: 308px;
+    height: 90px;
+    margin-bottom: 60px;
+    font-family: 'Georgia Regular';
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 45.5px;
+    letter-spacing: 0.06em;
+    text-align: center;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 55px 120px;
+    width: 1026px;
+    height: 281px;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 113px;
+}
+
+h4 {
+    margin: 30px 0 0;
+    font-family: 'Georgia Regular';
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+}
+
+/* Donation*/
+
+.donation {
+    background-color: #F6F6F6;
+    height: 462px;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.donation_content {
+    width: 915px;
+    height: 282px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px
+}
+
+.content_donation {
+    width: 380px;
+    height: 282px;
+    gap: 20px
+}
+
+h5 {
+
+    font-family: 'Georgia Regular';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 16.5px;
+    letter-spacing: 0.06em;
+    text-align: left;
+
+
+}
+
+
+
+.credit_card {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    width: 349px;
+    height: 43px;
+    padding: 10px 15px 10px 15px;
+    border-radius: 9px;
+    background-color: #F1CDB3;
+    gap: 15px;
+}
+
+.card_number {
+    width: 274px;
+    height: 23px;
+    font-family: 'Georgia Regular';
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: left;
+}
+
+.legal_info {
+    font-family: 'Arial Regular';
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    color: #B2B2B2
+}
+
+/*footer*/
+
+.footer_wrapper {
+    background: url('../../assets/images/footer-background.png');
+    background-size: cover;
+
+
+}
+
+.footer {
+    width: 1280px;
+    height: 350px;
+    margin: 0 auto;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.footer_content {
+    width: 1200px;
+    height: 310px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contacts h4 {
+    margin: 0;
+    font-family: 'Georgia Regular';
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: #F1CDB3;
+
+}
+
+.contacts h3 {
+    color: #FFFFFF;
+
+}
+
+.details {
+    width: 251px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;  
+}
+
+.locations h3 {
+    color: #FFFFFF;
+    margin-bottom: 34px;
+}
+
+.address {
+    width: 302px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 46px;
+    margin-bottom: 34px;
+}
+
+.location-icon {
+    width: 22px;
+    display: flex;
+    height: 32px;
+    align-self: center;
+}
+
+.address h4 {
+    font-weight: normal;
+    color: #F1CDB3;
+    font-size: 20px;
+    margin: 0;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: left;
 }
