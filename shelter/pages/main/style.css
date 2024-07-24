@@ -31,7 +31,7 @@ html {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin: 30px 40px 0;
+    margin: 25px 40px 0;
     margin-left: auto;
     margin-right: auto;
 }
@@ -40,29 +40,35 @@ main {
     margin-top: -90px;
 }
 
+.logo {
+    width: 184px;
+}
 
 
-h1 {
-    margin: 10px 0;
+h2 {
+    margin: 5px 0;
     font-family: 'Georgia Regular';
     font-size: 32px;
     font-weight: normal;
     line-height: 110%;
     color: #F1CDB3;
-    letter-spacing: 6%;
+    letter-spacing: 0.05em;
     max-width: 184px;
     max-height: 35px;
+
+
+
 
 }
 
 .subtitle {
-    margin-top: 0;
+    margin-top: 5px;
     font-family: 'Arial Regular';
     font-size: 13px;
     font-weight: 400;
     line-height: 14.95px;
     color: #FFFFFF;
-    letter-spacing: 1px;
+    letter-spacing: 0.090em;
     width: 179px;
     height: 15px;
 }
@@ -118,12 +124,19 @@ a {
     margin-right: auto;
 }
 
+.start_screen_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .content {
-    position: relative;
-    align-self: start;
+
+    margin-top: -75px;
+    align-self: middle;
     color: #CDCDCD;
-    top: 180px;
-    margin-left: 31px;
+
+
     width: 460px;
     height: 322px;
 }
@@ -133,7 +146,7 @@ a {
     height: 728px;
 }
 
-h2 {
+h1 {
     font-family: 'Georgia Regular';
     font-size: 44px;
     font-weight: 400;
@@ -154,10 +167,12 @@ h2 {
     margin-top: 42px;
 
 }
+
 a.button_make_friend {
     margin: 42px 0;
     font-family: 'Georgia Regular';
     font-size: 17px;
+    letter-spacing: 0.055em;
     font-weight: 400;
     width: 207px;
     height: 52px;
@@ -190,13 +205,21 @@ a.button_make_friend {
 
 }
 
+
+
 .about_content {
+
     width: 1200px;
     height: 408px;
+    margin-top: -15px;
+
+
+
+
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 120px;
+    margin-left: 215px;
 }
 
 .content_about {
@@ -238,7 +261,7 @@ h3 {
 .pets {
     margin-left: auto;
     margin-right: auto;
-    width: 1200px;
+    width: 1280px;
     align-items: center;
 }
 
@@ -337,18 +360,20 @@ h3 {
 }
 
 .go_to_know_the_rest {
+ 
     font-family: 'Georgia Regular';
     font-size: 17px;
     font-weight: 400;
     letter-spacing: 0.06em;
-    text-align: left;
+    text-align: center;
     width: 261px;
     height: 52px;
-    padding: 13px 43px 13px 43px;  
+    padding: 15px 0 15px 0;
     border-radius: 100px;
     margin: 0 auto;
     background-color: #F1CDB3;
     border: none;
+    color: #000000;
 }
 
 .go_to_know_the_rest:hover {
@@ -380,8 +405,9 @@ h3 {
 }
 
 .help_content h3 {
-    width: 308px;
+    width: 310px;
     height: 90px;
+
     margin-bottom: 60px;
     font-family: 'Georgia Regular';
     font-size: 35px;
@@ -403,7 +429,7 @@ h3 {
 .element {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     height: 113px;
 }
@@ -432,21 +458,25 @@ h4 {
     width: 915px;
     height: 282px;
     margin: 0 auto;
+    margin-top: -20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 30px
 }
 
 .content_donation {
+    /* margin-top: -10px; */
     width: 380px;
     height: 282px;
-    gap: 20px
+    gap: 17px
 }
 
 h5 {
 
     font-family: 'Georgia Regular';
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 15px;
     font-weight: 400;
     line-height: 16.5px;
@@ -460,8 +490,7 @@ h5 {
 
 .credit_card {
     display: flex;
-    align-items: center;
-    /* justify-content: center; */
+    align-items: center;    
     width: 349px;
     height: 43px;
     padding: 10px 15px 10px 15px;
@@ -474,11 +503,14 @@ h5 {
     width: 274px;
     height: 23px;
     font-family: 'Georgia Regular';
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 400;
     line-height: 23px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
     text-align: left;
+    color: #545454
+
+
 }
 
 .legal_info {
@@ -488,7 +520,8 @@ h5 {
     font-weight: 400;
     line-height: 18px;
     text-align: left;
-    color: #B2B2B2
+    color: #B2B2B2;
+    margin-top: 20px;
 }
 
 /*footer*/
@@ -517,6 +550,7 @@ h5 {
 }
 
 .contacts {
+    width: 278px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -535,8 +569,18 @@ h5 {
 }
 
 .contacts h3 {
+    margin-top: 15px;
     color: #FFFFFF;
 
+}
+
+.locations{
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: flex-start;
+   
+    width: 302px;
 }
 
 .details {
@@ -544,10 +588,11 @@ h5 {
     height: 32px;
     display: flex;
     align-items: center;
-    gap: 20px;  
+    gap: 20px;
 }
 
 .locations h3 {
+    margin-top: 15px;
     color: #FFFFFF;
     margin-bottom: 34px;
 }
@@ -558,7 +603,7 @@ h5 {
     align-items: center;
     gap: 20px;
     height: 46px;
-    margin-bottom: 34px;
+    margin-bottom: 28px;
 }
 
 .location-icon {

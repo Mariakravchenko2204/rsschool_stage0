@@ -232,6 +232,11 @@ a {
     background-color: #FDDCC4;
 }
 
+.inactive:disabled{
+    pointer-events: none;
+    background-color: none;
+}
+
 /*footer*/
 
 .footer_wrapper {
