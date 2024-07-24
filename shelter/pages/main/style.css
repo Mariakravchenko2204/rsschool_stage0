@@ -104,14 +104,14 @@ a {
     justify-content: space-between;
 }
 
-.wrapper_not_only {
+.not_only {
     background: url(../../assets/images/start-screen-background.jpg) no-repeat;
     background-size: cover;
     justify-content: center;
     margin: 0 auto;
 }
 
-.not-only {
+.not-only_block {
     width: 1280px;
     height: 908px;
     margin-left: auto;
@@ -177,14 +177,14 @@ a.button_make_friend {
 
 /*about*/
 
-.about_wrapper {
+.about {
     background-color: #fff;
     height: 588px;
     display: flex;
     align-items: center;
 }
 
-.about {
+.about_block {
     margin: 0 auto;
     width: 1280px;
 
@@ -230,7 +230,7 @@ h3 {
 
 /*our friends*/
 
-.our_friends_wrapper {
+.our_friends {
     background-color: #F6F6F6;
     height: 877px;
 }
@@ -419,7 +419,7 @@ h4 {
 
 /* Donation*/
 
-.donation {
+.in_addition {
     background-color: #F6F6F6;
     height: 462px;
     display: flex;
