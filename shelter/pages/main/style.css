@@ -3,6 +3,11 @@ html {
     scroll-behavior: smooth;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+  }
+
 *,
 *::before,
 *::after {
@@ -26,18 +31,25 @@ html {
 /*header*/
 
 .header {
+    width: 1280px;
+    height: 120px;
+    padding: 30px 40px 30px 40px;
+    margin: 0 auto;
+}
+
+.header_content {
     width: 1200px;
     height: 60px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
-    margin: 25px 40px 0;
+    /* margin: 25px 40px 0; */
     margin-left: auto;
     margin-right: auto;
 }
 
 main {
-    margin-top: -90px;
+    margin-top: -120px;
 }
 
 .logo {
@@ -71,11 +83,12 @@ h2 {
     letter-spacing: 0.090em;
     width: 179px;
     height: 15px;
+    margin-left: auto;
 }
 
 .nav-list {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     gap: 35px;
     list-style-type: none;
 }
@@ -84,6 +97,11 @@ h2 {
     font-family: 'Arial Regular';
     font-size: 15px;
     line-height: 160%;
+}
+.nav-item:hover{
+    border-bottom: solid;
+    border-color: #F1CDB3;
+    color: #292929;
 }
 
 a {
@@ -208,14 +226,9 @@ a.button_make_friend {
 
 
 .about_content {
-
     width: 1200px;
     height: 408px;
     margin-top: -15px;
-
-
-
-
     display: flex;
     align-items: center;
     gap: 120px;
@@ -275,8 +288,6 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 60px;
-
-
 }
 
 .slider {
@@ -407,7 +418,6 @@ h3 {
 .help_content h3 {
     width: 310px;
     height: 90px;
-
     margin-bottom: 60px;
     font-family: 'Georgia Regular';
     font-size: 35px;
@@ -428,8 +438,7 @@ h3 {
 
 .element {
     display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
+    flex-direction: column; 
     align-items: center;
     height: 113px;
 }
@@ -461,19 +470,16 @@ h4 {
     margin-top: -20px;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     gap: 30px
 }
 
 .content_donation {
-    /* margin-top: -10px; */
     width: 380px;
     height: 282px;
     gap: 17px
 }
 
 h5 {
-
     font-family: 'Georgia Regular';
     margin-top: 20px;
     margin-bottom: 20px;
@@ -482,8 +488,6 @@ h5 {
     line-height: 16.5px;
     letter-spacing: 0.06em;
     text-align: left;
-
-
 }
 
 
@@ -508,9 +512,7 @@ h5 {
     line-height: 23px;
     letter-spacing: 0.05em;
     text-align: left;
-    color: #545454
-
-
+    color: #545454;
 }
 
 .legal_info {
@@ -529,8 +531,6 @@ h5 {
 .footer_wrapper {
     background: url('../../assets/images/footer-background.png');
     background-size: cover;
-
-
 }
 
 .footer {
@@ -565,7 +565,6 @@ h5 {
     letter-spacing: 0.06em;
     text-align: left;
     color: #F1CDB3;
-
 }
 
 .contacts h3 {
