@@ -347,6 +347,7 @@ h3 {
     gap: 10px;
     border-radius: 100px;
     border: 2px solid #F1CDB3;
+    color: #292929;
 }
 
 .card:hover>.button_secondary {
