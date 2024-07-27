@@ -18,14 +18,16 @@ html {
     font-family: 'Georgia Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Georgia Regular'), url('./assets/fonts/georgia/Georgia.woff2') format('woff2');
+    src: local('Georgia Regular'), url('../../assets/fonts/georgia/Georgia.woff2') format('woff2'),
+    url(../../assets/fonts/georgia/Georgia.woff) format('woff');
 }
 
 @font-face {
     font-family: 'Arial Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Arial Regular'), url('./assets/fonts/arial/Arial.woff2') format('woff2');
+    src: local('Arial Regular'), url('../../assets/fonts/arial/Arial.woff2') format('woff2'),
+    url('../../assets/fonts/arial/ARIAL.woff') format('woff');
 }
 
 /*header*/
