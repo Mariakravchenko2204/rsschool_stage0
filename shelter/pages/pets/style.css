@@ -177,7 +177,8 @@ h3 {
 
 .card:hover {
     cursor: pointer;
-    background-color: #fff
+    background-color: #fff;
+    box-shadow: 0px 2px 35px 14px #0D0D0D0A;
 }
 
 .pet_name {
@@ -268,7 +269,8 @@ h3 {
 /*footer*/
 
 .footer_wrapper {
-    background: url('../../assets/images/footer-background.png');
+    background: url(../../assets/images/start-screen-gradient-background.jpg),linear-gradient(0deg, #5B483A, #211F20), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+
     background-size: cover;
 
 
