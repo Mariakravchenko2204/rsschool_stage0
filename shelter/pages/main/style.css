@@ -6,7 +6,7 @@ html {
 * {
     margin: 0;
     padding: 0;
-  }
+}
 
 *,
 *::before,
@@ -14,12 +14,14 @@ html {
     box-sizing: inherit;
 }
 
+
+
 @font-face {
     font-family: 'Georgia Regular';
     font-style: normal;
     font-weight: normal;
     src: local('Georgia Regular'), url('../../assets/fonts/georgia/Georgia.woff2') format('woff2'),
-    url('../../assets/fonts/georgia/Georgia.woff') format('woff');
+        url('../../assets/fonts/georgia/Georgia.woff') format('woff');
 }
 
 @font-face {
@@ -27,14 +29,16 @@ html {
     font-style: normal;
     font-weight: normal;
     src: local('Arial Regular'), url('../../assets/fonts/arial/Arial.woff2') format('woff2'),
-    url('../../assets/fonts/arial/ARIAL.woff') format('woff');
+        url('../../assets/fonts/arial/ARIAL.woff') format('woff');
 }
 
 /*header*/
 
-.header{
+.header {
 
-    background: url(../../assets/images/start-screen-gradient-background.jpg),linear-gradient(0deg, #5B483A, #211F20), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: url(../../assets/images/start-screen-gradient-background.jpg), linear-gradient(0deg, #5B483A, #211F20), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
 
 }
 
@@ -43,7 +47,7 @@ html {
     height: 120px;
     padding: 30px 40px 30px 40px;
     margin: 0 auto;
-    
+
 }
 
 .header_content {
@@ -52,14 +56,23 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
 }
 
+@media (max-width: 1280px) {
+    .header_wrapper {
+        width: 100vw;
+        padding: 30px 30px 00px 30px;
+    }
+
+    .header_content {
+        width: 93vw;
+    }
+}
 
 .logo {
     width: 184px;
 }
-
 
 h2 {
     margin: 5px 0;
@@ -99,7 +112,8 @@ h2 {
     font-size: 15px;
     line-height: 160%;
 }
-.nav-item:hover{
+
+.nav-item:hover {
     border-bottom: solid;
     border-color: #F1CDB3;
     color: #292929;
@@ -121,21 +135,20 @@ a {
 
 
 .start_screen_wrapper {
-   background: url(../../assets/images/start-screen-gradient-background.jpg),linear-gradient(0deg, #5B483A, #211F20), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-    
+    background: url(../../assets/images/start-screen-gradient-background.jpg), linear-gradient(0deg, #5B483A, #211F20), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
+
     background-size: cover;
-    
-   
+
+
 }
 
-.start_screen_block{
+.start_screen_block {
     height: 908px;
     width: 1280px;
-  
     margin: 0 auto;
 }
-
-
 
 .start_screen_content {
     width: 1200px;
@@ -146,22 +159,26 @@ a {
     margin-top: 60px;
 }
 
+
+
 .content {
 
     margin-top: -75px;
     align-self: center;
     color: #CDCDCD;
-
-
     width: 460px;
     height: 322px;
+    display: flex;
+    flex-direction: column;
 }
 
 .puppy {
-    width: 698px;
-    height: 728px;
+
     align-self: flex-end;
 }
+
+
+
 
 h1 {
     font-family: 'Georgia Regular';
@@ -185,7 +202,7 @@ h1 {
 
 }
 
-a.button_make_friend {
+.button_make_friend {
     margin: 42px 0;
     font-family: 'Georgia Regular';
     font-size: 17px;
@@ -198,13 +215,43 @@ a.button_make_friend {
     background-color: #F1CDB3;
     color: #292929;
     border-radius: 100px;
-    display: inline-block;
+    /* display: inline-block; */
     margin-top: 42px;
 }
 
 .button_make_friend:hover {
     background-color: #FDDCC4;
     cursor: pointer;
+}
+
+@media (max-width : 1280px) {
+    .start_screen_block {
+        width: 100vw;
+        height: 1165px;
+
+    }
+
+    .start_screen_content {
+        width: 74vw;
+        height: 1015px;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+
+    .content {
+        margin-top: 0;
+    }
+
+    .puppy {
+        position: relative;
+        top: 3px;
+        left: 70px;
+
+    }
+
+    .button_make_friend {
+        align-self: center;
+    }
 }
 
 /*about*/
@@ -215,6 +262,8 @@ a.button_make_friend {
     display: flex;
     align-items: center;
 }
+
+
 
 .about_block {
     margin: 0 auto;
@@ -232,12 +281,42 @@ a.button_make_friend {
     align-items: center;
     gap: 120px;
     margin-left: 215px;
+
 }
+
 
 .content_about {
     width: 430px;
     height: 380px;
 }
+
+@media (max-width : 1280px) {
+    .about {
+        height: 1048px;
+    }
+
+    .about_block {
+        width: 768px;
+        padding: 80px 166px 100px 165px;
+    }
+
+    .about_content {
+        width: 437px;
+        height: 868px;
+
+        padding: 0px 3px 0px 4px;
+        gap: 0px;
+        margin-left: 0px;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+
+    }
+
+    .content_about {
+        margin-top: 7px;
+    }
+}
+
 
 .subheading {
     font-family: 'Arial Regular';
@@ -277,21 +356,47 @@ h3 {
     align-items: center;
 }
 
+
+
+
+
 .pets_content {
-    margin: 0 0;
-    position: relative;
+    margin: 0 auto;
+
+    padding-top: 80px;
     width: 1200px;
     height: 697px;
-    top: 80px;
-    left: 40px;
+
     display: flex;
     flex-direction: column;
     gap: 60px;
 }
 
+
+
 .slider {
     display: flex;
     gap: 90px;
+}
+
+@media (max-width : 1280px) {
+    .pets {
+        width: 768px;
+    }
+
+    .pets_content {
+        margin: 0 auto;
+        width: 708px;
+        height: 697px;
+    }
+
+    .slider {
+        height: 435px;
+        justify-content: space-around;
+        gap: 10px;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
 }
 
 
@@ -365,7 +470,9 @@ h3 {
     border: 2px solid #F1CDB3;
 }
 
-.arrow:hover{
+
+
+.arrow:hover {
     cursor: pointer;
     background-color: #FDDCC4;
 }
@@ -378,8 +485,22 @@ h3 {
     margin-left: 53px;
 }
 
+@media (max-width : 1280px) {
+    .arrow-left {
+        margin-right: 0px;
+    }
+
+    .arrow-right {
+        margin-left: 0;
+    }
+
+    .arrow {
+        margin-right: 0;
+    }
+}
+
 .go_to_know_the_rest {
- 
+
     font-family: 'Georgia Regular';
     font-size: 17px;
     font-weight: 400;
@@ -412,16 +533,20 @@ h3 {
     margin: 0 auto;
 }
 
+
+
 .help_content {
     width: 1200px;
     height: 431px;
-    top: 80px;
-    left: 40px;
+
     padding: 0px 87px 0px 87px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+
+
 
 .help_content h3 {
     width: 310px;
@@ -444,11 +569,36 @@ h3 {
     height: 281px;
 }
 
+
+
 .element {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     height: 113px;
+}
+
+@media (max-width: 1280px) {
+    .help {
+        width: 768px;
+        height: 779px;
+        padding: 80px 69px 100px 69px;
+    }
+
+    .help_content {
+        width: 630px;
+        height: 599px;
+    }
+
+    .list {
+        gap: 55px 60px;
+        width: 630px;
+        height: 449px;
+    }
+
+    .element {
+        width: 170px;
+    }
 }
 
 h4 {
@@ -473,7 +623,7 @@ h4 {
 
 .donation_content {
     width: 915px;
-    height: 282px;
+
     margin: 0 auto;
     margin-top: -20px;
     display: flex;
@@ -485,6 +635,32 @@ h4 {
     width: 380px;
     height: 282px;
     gap: 17px
+}
+
+@media (max-width: 1280px) {
+    .in_addition {
+        height: 783px;
+
+    }
+
+    .donation_content {
+        margin: 0 auto;
+
+        width: 380px;
+        height: 783px;
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 60px;
+
+    }
+
+    .content_donation {
+        margin-top: -20px;
+
+    }
+
+
+
 }
 
 h5 {
@@ -502,7 +678,7 @@ h5 {
 
 .credit_card {
     display: flex;
-    align-items: center;    
+    align-items: center;
     width: 349px;
     height: 43px;
     padding: 10px 15px 10px 15px;
@@ -537,7 +713,9 @@ h5 {
 /*footer*/
 
 .footer_wrapper {
-    background: url(../../assets/images/start-screen-gradient-background.jpg),linear-gradient(0deg, #5B483A, #211F20), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    background: url(../../assets/images/start-screen-gradient-background.jpg), linear-gradient(0deg, #5B483A, #211F20), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    ;
 
     background-size: cover;
 }
@@ -556,6 +734,37 @@ h5 {
     height: 310px;
     display: flex;
     justify-content: space-between;
+}
+
+.footer_text {
+    display: flex;
+    gap: 160px;
+}
+
+@media (max-width: 1280px) {
+    .footer {
+        width: 768px;
+        height: 639px;
+        align-items: start;
+
+    }
+
+    .footer_text {
+        gap: 60px;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    .footer_content {
+
+
+        width: 708px;
+        justify-content: center;
+        flex-direction: row;
+
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
 }
 
 .contacts {
@@ -582,12 +791,12 @@ h5 {
 
 }
 
-.locations{
+.locations {
     display: flex;
-    
+
     flex-direction: column;
     justify-content: flex-start;
-   
+
     width: 302px;
 }
 

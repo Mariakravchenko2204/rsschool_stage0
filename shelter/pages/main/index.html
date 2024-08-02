@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1280px, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width", initial-scale=1.0">
     <title>Cozy House</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
@@ -19,7 +19,7 @@
             <div class="start_screen_block">
                 <section class="header_wrapper">
                     <div class="header_content">
-                        <div class="logo"><a href="#">
+                        <div class="padding: 30px 40px 30px 40px;"><a href="#">
 
                                 <h2>Cozy House</h2>
 
@@ -57,7 +57,15 @@
                             </div>
                             <a href="#our_pets" class="button_make_friend">Make a friend</a>
                         </div>
-                        <img class="puppy" src="../../assets/images/start-screen-puppy.png" alt="puppy">
+                        <!-- <img class="puppy" src="../../assets/images/start-screen-puppy.png" alt="puppy"> -->
+
+                        <picture class="puppy">
+                            <source srcset="../../assets/images/start-screen-puppy.png" type="image/png" media="(min-width:1280px)">
+                            <source srcset="../../assets/images/start-screen-puppy768.png" type="image/png" media="(max-width:12800px)">
+                            <img src="../../assets/images/start-screen-puppy.png" alt="puppy">
+
+                            
+                        </picture>
                     </div>
 
 
@@ -194,31 +202,34 @@
     <footer class="footer_wrapper">
         <div class="footer">
             <div class="footer_content">
-                <div class="contacts" id="contacts">
-                    <h3>For questions<br>and suggestions</h3>
-                    <a href="mailto:email@shelter.com" class="details email">
-                        <img src="../../assets/images/icon-email.svg" alt="email">
-                        <h4>email@shelter.com</h4>
-                    </a>
-
-                    <a href="tel:+136745677554" class="details phone">
-                        <img src="../../assets/images/icon-phone.svg" alt="phone">
-                        <h4>+13 674 567 75 54</h4>
-                    </a>
+                <div class="footer_text">
+                    <div class="contacts" id="contacts">
+                        <h3>For questions<br>and suggestions</h3>
+                        <a href="mailto:email@shelter.com" class="details email">
+                            <img src="../../assets/images/icon-email.svg" alt="email">
+                            <h4>email@shelter.com</h4>
+                        </a>
+    
+                        <a href="tel:+136745677554" class="details phone">
+                            <img src="../../assets/images/icon-phone.svg" alt="phone">
+                            <h4>+13 674 567 75 54</h4>
+                        </a>
+                    </div>
+                    <div class="locations">
+                        <h3>We are waiting<br>for your visit</h3>
+    
+                        <a href="https://maps.app.goo.gl/N1ERRW4Uq9BhxovXA" class="address" target="_blank">
+                            <img src="../../assets/images/icon-marker.png" alt="icon-marker" class="location-icon">
+                            <h4>1 Central Street, Boston (entrance from the store)</h4>
+                        </a>
+    
+                        <a href="https://maps.app.goo.gl/Sdc1fkpRV7sEsGgLA" class="address" target="_blank">
+                            <img src="../../assets/images/icon-marker.png" alt="icon-marker" class="location-icon">
+                            <h4>18 South Park, London </h4>
+                        </a>
+                    </div>
                 </div>
-                <div class="locations">
-                    <h3>We are waiting<br>for your visit</h3>
-
-                    <a href="https://maps.app.goo.gl/N1ERRW4Uq9BhxovXA" class="address" target="_blank">
-                        <img src="../../assets/images/icon-marker.png" alt="icon-marker" class="location-icon">
-                        <h4>1 Central Street, Boston (entrance from the store)</h4>
-                    </a>
-
-                    <a href="https://maps.app.goo.gl/Sdc1fkpRV7sEsGgLA" class="address" target="_blank">
-                        <img src="../../assets/images/icon-marker.png" alt="icon-marker" class="location-icon">
-                        <h4>18 South Park, London </h4>
-                    </a>
-                </div>
+                
                 <div class="footer_puppy">
                     <img src="../../assets/images/footer-puppy.png" alt="">
                 </div>
