@@ -188,29 +188,31 @@ h3 {
 }
 
 @media (max-width : 1280px) {
-    .our_friends {
-        width: 768px;
+    .our_friends {   
+        width: 100%;
         height: 1733px;
 
     }
 
     .our_friends_block {
-        width: 708px;
+        width: auto;      
         height: 1603px;
     }
 
     .pets_content {
-        width: 580px;
+        width: auto;
         height: 1733px;
         margin: 0 auto;
     }
 
     .cards_container {
-        width: 580px;
+        width: auto;  
+        margin: 0 auto;
         height: 1365px;  
         border-radius: 9px 0px 0px 0px;
         gap: 30px 40px;
         overflow: hidden;
+        justify-content: center;
     }
     h3{
         margin-bottom: 30px;
