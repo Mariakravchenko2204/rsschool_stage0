@@ -77,36 +77,6 @@ html {
 
 }
 
-
-
-@media (max-width: 1280px) {
-    .header_wrapper {
-        width: 100%;
-        padding: 30px 30px;
-
-
-    }
-
-    .header_content {
-        width: auto;
-
-    }
-}
-
-
-@media (max-width: 400px) {
-    .header_wrapper {
-        padding: 30px 20px;
-    }
-
-    .header_content {
-        width: 100%;
-    }
-}
-
-
-
-
 .logo {
     width: 184px;
 }
@@ -167,6 +137,20 @@ a {
     color: #FAFAFA;
 }
 
+@media (max-width: 1280px) {
+    .header_wrapper {
+        width: 100%;
+        padding: 30px 30px;
+
+
+    }
+
+    .header_content {
+        width: auto;
+
+    }
+}
+
 @media (max-width: 710px) {
     .nav-list {
         display: none;
@@ -177,18 +161,23 @@ a {
     }
 }
 
+@media (max-width: 400px) {
+    .header_wrapper {
+        padding: 30px 20px;
+    }
+
+    .header_content {
+        width: 100%;
+    }
+}
+
 /*not only*/
-
-
 
 .start_screen_wrapper {
     background: url(../../assets/images/start-screen-gradient-background.jpg), linear-gradient(0deg, #5B483A, #211F20), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%)
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
     ;
-
     background-size: cover;
-
-
 }
 
 .start_screen_block {
@@ -206,8 +195,6 @@ a {
     margin-top: 60px;
 }
 
-
-
 .content {
 
     margin-top: -75px;
@@ -221,12 +208,8 @@ a {
 }
 
 .puppy {
-
     align-self: flex-end;
 }
-
-
-
 
 h1 {
     font-family: 'Georgia Regular';
@@ -263,7 +246,6 @@ h1 {
     background-color: #F1CDB3;
     color: #292929;
     border-radius: 100px;
-    /* display: inline-block; */
     margin-top: 42px;
 }
 
@@ -281,32 +263,26 @@ h1 {
 
     .start_screen_content {
         width: 74%;
-        /* max-width: 74vw; */
         height: 1015px;
         flex-direction: column;
         margin-top: 30px;
-
     }
 
     .content {
         width: auto;
         margin-top: 0;
         margin: 0 54px;
-
-
     }
 
     .puppy {
         position: relative;
         top: 3px;
         left: 70px;
-
     }
 
     .button_make_friend {
         margin: 0 auto;
         margin-top: 45px
-            /* margin-left: 125px; */
     }
 
     .subheading_not_only {
@@ -314,7 +290,7 @@ h1 {
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
 
     .start_screen_block {
         height: 823px;
@@ -328,9 +304,7 @@ h1 {
         margin: 0;
     }
 
-
     h1 {
-
         font-size: 25px;
         font-weight: 400;
         line-height: 32.5px;
@@ -350,8 +324,6 @@ h1 {
         line-height: 24px;
         text-align: center;
         height: auto;
-
-
     }
 
     .puppy {
@@ -368,15 +340,11 @@ h1 {
     align-items: center;
 }
 
-
-
 .about_block {
     margin: 0 auto;
     width: 1280px;
 
 }
-
-
 
 .about_content {
     width: 1200px;
@@ -386,13 +354,13 @@ h1 {
     margin-left: 215px;
 
 }
-.about_pets{
+
+.about_pets {
     margin-top: -5px;
 }
 
 
 .content_about {
-    /* margin-top: 5px; */
     width: 430px;
     height: 380px;
 }
@@ -422,7 +390,6 @@ h3 {
 
 }
 
-
 @media (max-width : 1280px) {
     .about {
         height: 1048px;
@@ -431,39 +398,29 @@ h3 {
     .about_block {
         width: 100%;
         margin: 0 auto;
-        /* padding: 80px 166px 100px 165px; */
     }
 
     .about_content {
-     
         width: 57%;
         height: 868px;
         padding: 0px 3px 5px 4px;
         gap: 60px;
         margin: 0 auto;
         flex-direction: column-reverse;
-       
-
     }
-    
-    
 
     .content_about {
-
         width: 100%;
         height: auto;
-      
-       
-        /* margin: 0 auto; */
     }
 
-    .about_pets{
+    .about_pets {
         margin-left: 60px;
     }
 
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .about {
         height: 974px;
     }
@@ -474,57 +431,37 @@ h3 {
         gap: 10px;
     }
 
-    
-
-
-    h3 {
+    .content_about h3 {
         width: 100%;
-
         font-size: 25px;
         font-weight: 400;
         line-height: 32.5px;
         letter-spacing: 0.06em;
         text-align: center;
-
     }
-
-
     .content_about {
-
         width: 100%;
         height: auto;
-       
         margin-top: 42px;
     }
-
-    
 
     .subheading {
         width: 100%;
         margin-top: 0;
         padding: 0 9px;
-
-
         font-size: 15px;
         font-weight: 400;
         line-height: 24px;
         text-align: justify;
         margin-bottom: 22px;
-
-
     }
 
-    .about_pets{
-        
+    .about_pets {
         margin-left: 15px;
         margin-top: 0;
     }
 
 }
-
-
-
-
 
 /*our friends*/
 
@@ -540,23 +477,15 @@ h3 {
     align-items: center;
 }
 
-
-
-
-
 .pets_content {
     margin: 0 auto;
-
     padding-top: 80px;
     width: 1200px;
     height: 697px;
-
     display: flex;
     flex-direction: column;
     gap: 60px;
 }
-
-
 
 .slider {
     display: flex;
@@ -566,11 +495,9 @@ h3 {
 @media (max-width : 1280px) {
     .pets {
         width: auto;
-
     }
 
     .pets_content {
-
         width: auto;
         padding: 80px 30px 0 30px;
     }
@@ -584,16 +511,12 @@ h3 {
     }
 }
 
-
-
-
 .pets_content h3 {
     margin-top: 40px;
     width: 400px;
     margin: 0 auto;
     text-align: center;
 }
-
 
 .card {
     width: 270px;
@@ -659,8 +582,6 @@ h3 {
     border: 2px solid #F1CDB3;
 }
 
-
-
 .arrow:hover {
     cursor: pointer;
     background-color: #FDDCC4;
@@ -672,20 +593,6 @@ h3 {
 
 .arrow-right {
     margin-left: 53px;
-}
-
-@media (max-width : 1280px) {
-    .arrow-left {
-        margin-right: 0px;
-    }
-
-    .arrow-right {
-        margin-left: 0;
-    }
-
-    .arrow {
-        margin-right: 0;
-    }
 }
 
 
@@ -713,6 +620,20 @@ h3 {
     background-color: #FDDCC4;
 }
 
+@media (max-width : 1280px) {
+    .arrow-left {
+        margin-right: 0px;
+    }
+
+    .arrow-right {
+        margin-left: 0;
+    }
+
+    .arrow {
+        margin-right: 0;
+    }
+}
+
 @media (max-width: 400px) {
 
     .our_friends {
@@ -729,7 +650,6 @@ h3 {
 
     .pets_content h3 {
         width: auto;
-
     }
 
     .wrapper :nth-child(1) {
@@ -744,7 +664,6 @@ h3 {
         order: 1
     }
 
-
     .wrapper {
         flex-wrap: wrap;
         justify-content: center;
@@ -758,15 +677,6 @@ h3 {
     .slider :nth-child(1) {
         order: 1
     }
-
-
-
-    /* .arrow{
-        margin-top: 40px;
-    } */
-
-
-
 
 }
 
@@ -793,9 +703,6 @@ h3 {
     flex-direction: column;
     align-items: center;
 }
-
-
-
 
 .help_content h3 {
     width: 310px;
@@ -827,18 +734,13 @@ h3 {
 
 @media (max-width: 1280px) {
     .help {
-        /* width: 768px; */
         width: 100%;
         height: 779px;
-        /* padding: 80px 69px 100px 69px; */
     }
-
 
     .help_content {
         width: auto;
-
         height: 599px;
-
         padding: 0;
     }
 
@@ -874,22 +776,15 @@ h4 {
         padding: 42px 15px;
     }
 
-
-
     .help_content h3 {
-
         font-size: 25px;
-
         line-height: 32.5px;
         margin-bottom: 42px;
-
-
     }
 
     .list {
         height: 555px;
         gap: 30px 30px;
-
     }
 
     .element {
@@ -913,13 +808,10 @@ h4 {
     @media (max-width : 319px) {
         .element {
             margin: 0 auto;
-
         }
 
         .list {
-
             overflow: hidden;
-
             gap: 11px;
         }
     }
@@ -934,12 +826,10 @@ h4 {
     display: flex;
     align-items: center;
 
-
 }
 
 .donation_content {
     width: 915px;
-
     margin: 0 auto;
     margin-top: -20px;
     display: flex;
@@ -953,36 +843,6 @@ h4 {
     gap: 17px
 }
 
-@media (max-width: 1280px) {
-    .in_addition {
-        height: 783px;
-
-    }
-
-}
-
-@media (max-width: 1000px) {
-
-    .donation_content {
-        margin: 0 auto;
-
-        width: 380px;
-        height: 783px;
-        flex-direction: column-reverse;
-        justify-content: center;
-        gap: 60px;
-
-    }
-
-    .content_donation {
-        margin-top: -20px;
-
-    }
-
-
-
-}
-
 h5 {
     font-family: 'Georgia Regular';
     margin-top: 20px;
@@ -993,8 +853,6 @@ h5 {
     letter-spacing: 0.06em;
     text-align: left;
 }
-
-
 
 .credit_card {
     display: flex;
@@ -1030,6 +888,29 @@ h5 {
     margin-top: 20px;
 }
 
+@media (max-width: 1280px) {
+    .in_addition {
+        height: 783px;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    .donation_content {
+        margin: 0 auto;
+        width: 380px;
+        height: 783px;
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 60px;
+
+    }
+
+    .content_donation {
+        margin-top: -20px;
+    }
+}
+
 @media (max-width: 500px) {
     .in_addition {
         height: 542px;
@@ -1055,8 +936,6 @@ h5 {
         text-align: center;
         width: auto;
         height: auto;
-
-
     }
 
     .content_donation h5 {
@@ -1090,8 +969,6 @@ h5 {
         font-weight: 400;
         line-height: 16.5px;
         letter-spacing: 0.06em;
-
-
     }
 
     .legal_info {
@@ -1106,7 +983,6 @@ h5 {
     background: url(../../assets/images/start-screen-gradient-background.jpg), linear-gradient(0deg, #5B483A, #211F20), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%)
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
     ;
-
     background-size: cover;
 }
 
@@ -1116,7 +992,6 @@ h5 {
     margin: 0 auto;
     display: flex;
     align-items: end;
-    /* justify-content: space-between; */
 }
 
 .footer_content {
@@ -1125,7 +1000,6 @@ h5 {
     display: flex;
     flex-wrap: wrap;
     margin-left: 40px;
-
 }
 
 .footer_puppy {
@@ -1153,26 +1027,17 @@ h5 {
     }
 
     .footer_content {
-
-
         width: 100%;
         justify-content: center;
         flex-direction: row;
-
         margin: 0 auto;
         flex-wrap: wrap;
     }
 
     .footer_puppy {
         margin-left: 42px;
-
     }
-
-
 }
-
-
-
 
 .contacts {
     width: 278px;
@@ -1197,17 +1062,12 @@ h5 {
     color: #FFFFFF;
     width: 100%;
     letter-spacing: 0.059em;
-
-
-
 }
 
 .locations {
     display: flex;
-
     flex-direction: column;
     justify-content: flex-start;
-
     width: 302px;
 }
 
@@ -1260,11 +1120,9 @@ h5 {
     }
 
     .footer_text {
-      
-        
         flex-direction: column;
         margin: 0 auto;
-        
+
     }
 
     .footer_content {
@@ -1288,7 +1146,7 @@ h5 {
 
     }
 
-    .locations{
+    .locations {
         width: auto;
         height: auto;
         justify-content: space-between;
@@ -1299,31 +1157,25 @@ h5 {
         font-size: 25px;
         letter-spacing: 0.06em;
         text-align: center;
-        margin: 0  24px 40px;
-        
+        margin: 0 24px 40px;
         height: auto;
-
     }
 
     .contacts {
-       
         width: auto;
         height: 208px;
-        
     }
-    .details{
-        margin: 0 auto;
 
+    .details {
+        margin: 0 auto;
     }
+
     .phone {
         padding-left: 5px;
     }
 
-    .address{
+    .address {
         margin: 0 auto;
         margin-bottom: 30px;
     }
-
-    
-
 }
