@@ -465,6 +465,7 @@ h3 {
     .about_pets {
         margin-left: 15px;
         margin-top: 0;
+        margin: 0 auto;
     }
 
 }
