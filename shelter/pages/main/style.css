@@ -58,16 +58,54 @@ html {
 
 }
 
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    display: none;
+
+}
+
+
+
+.burger__line {
+    width: 100%;
+    height: 2px;
+    background-color: #F1CDB3;
+
+}
+
+
+
 @media (max-width: 1280px) {
     .header_wrapper {
-        width: 100vw;
-        padding: 30px 30px 00px 30px;
+        width: 100%;
+        padding: 30px 30px;
+
+
     }
 
     .header_content {
         width: auto;
+
     }
 }
+
+
+@media (max-width: 400px) {
+    .header_wrapper {
+        padding: 30px 20px;
+    }
+
+    .header_content {
+        width: 100%;
+    }
+}
+
+
+
 
 .logo {
     width: 184px;
@@ -127,6 +165,16 @@ a {
     border-bottom: solid;
     border-color: #F1CDB3;
     color: #FAFAFA;
+}
+
+@media (max-width: 710px) {
+    .nav-list {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
 }
 
 /*not only*/
@@ -266,6 +314,51 @@ h1 {
     }
 }
 
+@media (max-width: 400px) {
+
+    .start_screen_block {
+        height: 823px;
+    }
+
+    .start_screen_content {
+        height: 673px;
+    }
+
+    .content {
+        margin: 0;
+    }
+
+
+    h1 {
+
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 32.5px;
+        letter-spacing: 0.06em;
+        text-align: center;
+        height: auto;
+        margin-bottom: 42px;
+
+    }
+
+    .subheading_not_only {
+        width: 100%;
+        margin: 0;
+        padding: 0 5px;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
+        height: auto;
+
+
+    }
+
+    .puppy {
+        left: 30px;
+    }
+}
+
 /*about*/
 
 .about {
@@ -288,16 +381,18 @@ h1 {
 .about_content {
     width: 1200px;
     height: 408px;
-    margin-top: -15px;
     display: flex;
-    align-items: center;
     gap: 120px;
     margin-left: 215px;
 
 }
+.about_pets{
+    margin-top: -5px;
+}
 
 
 .content_about {
+    /* margin-top: 5px; */
     width: 430px;
     height: 380px;
 }
@@ -313,40 +408,6 @@ h1 {
     width: auto;
 }
 
-
-@media (max-width : 1280px) {
-    .about {
-        height: 1048px;
-    }
-
-    .about_block {
-        width: 100%;
-        margin: 0 auto;
-        padding: 80px 166px 100px 165px;
-    }
-
-    .about_content {
-        width: 100%;
-        height: 868px;
-        padding: 0px 3px 0px 4px;
-        gap: 0px;
-        margin: 0 auto;
-        flex-direction: column-reverse;
-        justify-content: space-between;
-
-    }
-
-    .content_about {
-        width: 100%;
-
-        margin-top: 7px;
-        margin: 0 auto;
-    }
-
-}
-
-
-
 h3 {
     margin: 0;
     color: #545454;
@@ -360,6 +421,110 @@ h3 {
     text-align: left;
 
 }
+
+
+@media (max-width : 1280px) {
+    .about {
+        height: 1048px;
+    }
+
+    .about_block {
+        width: 100%;
+        margin: 0 auto;
+        /* padding: 80px 166px 100px 165px; */
+    }
+
+    .about_content {
+     
+        width: 57%;
+        height: 868px;
+        padding: 0px 3px 5px 4px;
+        gap: 60px;
+        margin: 0 auto;
+        flex-direction: column-reverse;
+       
+
+    }
+    
+    
+
+    .content_about {
+
+        width: 100%;
+        height: auto;
+      
+       
+        /* margin: 0 auto; */
+    }
+
+    .about_pets{
+        margin-left: 60px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .about {
+        height: 974px;
+    }
+
+    .about_content {
+        width: 93%;
+        height: 890px;
+        gap: 10px;
+    }
+
+    
+
+
+    h3 {
+        width: 100%;
+
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 32.5px;
+        letter-spacing: 0.06em;
+        text-align: center;
+
+    }
+
+
+    .content_about {
+
+        width: 100%;
+        height: auto;
+       
+        margin-top: 42px;
+    }
+
+    
+
+    .subheading {
+        width: 100%;
+        margin-top: 0;
+        padding: 0 9px;
+
+
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: justify;
+        margin-bottom: 22px;
+
+
+    }
+
+    .about_pets{
+        
+        margin-left: 15px;
+        margin-top: 0;
+    }
+
+}
+
+
+
+
 
 /*our friends*/
 
@@ -400,13 +565,14 @@ h3 {
 
 @media (max-width : 1280px) {
     .pets {
-        width: 768px;
+        width: auto;
+
     }
 
     .pets_content {
-        margin: 0 auto;
-        width: 708px;
-        height: 697px;
+
+        width: auto;
+        padding: 80px 30px 0 30px;
     }
 
     .slider {
@@ -419,11 +585,15 @@ h3 {
 }
 
 
+
+
 .pets_content h3 {
+    margin-top: 40px;
     width: 400px;
     margin: 0 auto;
     text-align: center;
 }
+
 
 .card {
     width: 270px;
@@ -518,6 +688,9 @@ h3 {
     }
 }
 
+
+
+
 .go_to_know_the_rest {
 
     font-family: 'Georgia Regular';
@@ -538,6 +711,63 @@ h3 {
 .go_to_know_the_rest:hover {
     cursor: pointer;
     background-color: #FDDCC4;
+}
+
+@media (max-width: 400px) {
+
+    .our_friends {
+        height: 791px;
+    }
+
+    .pets_content {
+        padding: 42px 10px 0 10px;
+        height: 707px;
+        /* justify-content: space-between; */
+        gap: 40px;
+        /* gap: 70px; */
+    }
+
+    .pets_content h3 {
+        width: auto;
+
+    }
+
+    .wrapper :nth-child(1) {
+        order: 2
+    }
+
+    .wrapper :nth-child(3) {
+        order: 2
+    }
+
+    .wrapper :nth-child(2) {
+        order: 1
+    }
+
+
+    .wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 80px
+    }
+
+    .slider {
+        height: 455px;
+    }
+
+    .slider :nth-child(1) {
+        order: 1
+    }
+
+
+
+    /* .arrow{
+        margin-top: 40px;
+    } */
+
+
+
+
 }
 
 /* Help*/
@@ -588,8 +818,6 @@ h3 {
     height: 281px;
 }
 
-ß
-
 .element {
     display: flex;
     flex-direction: column;
@@ -610,7 +838,7 @@ h3 {
         width: auto;
 
         height: 599px;
-     
+
         padding: 0;
     }
 
@@ -638,6 +866,64 @@ h4 {
     font-weight: 400;
     line-height: 23px;
     letter-spacing: 0.06em;
+}
+
+@media (max-width: 720px) {
+    .help {
+        height: 745px;
+        padding: 42px 15px;
+    }
+
+
+
+    .help_content h3 {
+
+        font-size: 25px;
+
+        line-height: 32.5px;
+        margin-bottom: 42px;
+
+
+    }
+
+    .list {
+        height: 555px;
+        gap: 30px 30px;
+
+    }
+
+    .element {
+        width: 130px;
+        height: 87px;
+        margin-right: auto;
+    }
+
+    .element h4 {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 16.5px;
+        margin-top: 20px;
+    }
+
+    .help img {
+        height: 50px;
+        width: 50px;
+    }
+
+    @media (max-width : 319px) {
+        .element {
+            margin: 0 auto;
+
+        }
+
+        .list {
+
+            overflow: hidden;
+
+            gap: 11px;
+        }
+    }
+
 }
 
 /* Donation*/
@@ -744,6 +1030,76 @@ h5 {
     margin-top: 20px;
 }
 
+@media (max-width: 500px) {
+    .in_addition {
+        height: 542px;
+    }
+
+    .donation_content {
+        height: auto;
+        gap: 42px;
+    }
+
+    .content_donation {
+        height: auto;
+        width: 300px;
+        margin-top: 0px;
+    }
+
+    .content_donation h3 {
+
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 32.5px;
+        letter-spacing: 0.06em;
+        text-align: center;
+        width: auto;
+        height: auto;
+
+
+    }
+
+    .content_donation h5 {
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        width: auto;
+        height: 24px;
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+        margin-left: 13px;
+        margin-right: 13px;
+
+
+    }
+
+    .credit_card {
+        width: 281px;
+        height: 43px;
+        margin-left: 10px;
+
+
+    }
+
+    .card_number {
+        width: auto;
+        height: 17px;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 16.5px;
+        letter-spacing: 0.06em;
+
+
+    }
+
+    .legal_info {
+        margin-left: 10px;
+    }
+
+}
+
 /*footer*/
 
 .footer_wrapper {
@@ -760,14 +1116,20 @@ h5 {
     margin: 0 auto;
     display: flex;
     align-items: end;
-    justify-content: center;
+    /* justify-content: space-between; */
 }
 
 .footer_content {
     width: 1200px;
     height: 310px;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 40px;
+
+}
+
+.footer_puppy {
+    margin-right: 40px;
 }
 
 .footer_text {
@@ -777,9 +1139,11 @@ h5 {
 
 @media (max-width: 1280px) {
     .footer {
-        width: 768px;
+        width: auto;
         height: 639px;
-        align-items: start;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
     }
 
     .footer_text {
@@ -791,14 +1155,24 @@ h5 {
     .footer_content {
 
 
-        width: 708px;
+        width: 100%;
         justify-content: center;
         flex-direction: row;
 
         margin: 0 auto;
         flex-wrap: wrap;
     }
+
+    .footer_puppy {
+        margin-left: 42px;
+
+    }
+
+
 }
+
+
+
 
 .contacts {
     width: 278px;
@@ -821,6 +1195,10 @@ h5 {
 .contacts h3 {
     margin-top: 15px;
     color: #FFFFFF;
+    width: 100%;
+    letter-spacing: 0.059em;
+
+
 
 }
 
@@ -845,6 +1223,8 @@ h5 {
     margin-top: 15px;
     color: #FFFFFF;
     margin-bottom: 34px;
+    width: 100%;
+    letter-spacing: 0.06em;
 }
 
 .address {
@@ -871,4 +1251,79 @@ h5 {
     line-height: 23px;
     letter-spacing: 0.06em;
     text-align: left;
+}
+
+@media (max-width: 700px) {
+
+    .footer {
+        height: 809px;
+    }
+
+    .footer_text {
+      
+        
+        flex-direction: column;
+        margin: 0 auto;
+        
+    }
+
+    .footer_content {
+        margin-top: 10px;
+        flex-direction: column;
+        width: auto;
+        height: auto;
+    }
+
+    .footer_puppy {
+        margin: 0 auto;
+
+    }
+
+    .contacts h3 {
+        width: 100%;
+        height: auto;
+        font-size: 25px;
+        text-align: center;
+        margin-top: 20px;
+
+    }
+
+    .locations{
+        width: auto;
+        height: auto;
+        justify-content: space-between;
+    }
+
+    .locations h3 {
+        width: auto;
+        font-size: 25px;
+        letter-spacing: 0.06em;
+        text-align: center;
+        margin: 0  24px 40px;
+        
+        height: auto;
+
+    }
+
+    .contacts {
+       
+        width: auto;
+        height: 208px;
+        
+    }
+    .details{
+        margin: 0 auto;
+
+    }
+    .phone {
+        padding-left: 5px;
+    }
+
+    .address{
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    
+
 }
