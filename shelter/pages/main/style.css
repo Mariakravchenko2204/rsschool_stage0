@@ -288,7 +288,7 @@ h1 {
     .subheading_not_only {
         width: 100%;
         margin-top: 42px;
-        
+
 
     }
 }
@@ -417,7 +417,7 @@ h3 {
     .content_about {
         width: 100%;
         height: auto;
-       
+
     }
 
     .about_pets {
@@ -445,6 +445,7 @@ h3 {
         letter-spacing: 0.06em;
         text-align: center;
     }
+
     .content_about {
         width: 100%;
         height: auto;
@@ -656,7 +657,7 @@ h3 {
     }
 
     .pets_content h3 {
-      
+
         width: auto;
         font-size: 25px;
         height: 64px;
@@ -675,6 +676,7 @@ h3 {
         order: 1
     }
 
+
     .wrapper {
         flex-wrap: wrap;
         justify-content: center;
@@ -682,13 +684,23 @@ h3 {
     }
 
     .slider {
+        width: auto;
         height: 455px;
+        flex-direction: column;
+    }
+
+    .card {
+        margin-left: 15px;
+        margin-top: -10px;
     }
 
     .slider :nth-child(1) {
         order: 1
     }
 
+    .go_to_know_the_rest {
+        margin-top: 5px;
+    }
 }
 
 /* Help*/
@@ -874,6 +886,7 @@ h5 {
     border-radius: 9px;
     background-color: #F1CDB3;
     gap: 15px;
+    white-space: nowrap;
 }
 
 .card_number {
@@ -1125,16 +1138,16 @@ h5 {
         margin-left: 42px;
     }
 
-    .contacts h3{
+    .contacts h3 {
         line-height: 45px;
-        
+
     }
 
-.locations h3{
-    line-height: 45px;
-}
+    .locations h3 {
+        line-height: 45px;
+    }
 
-    
+
 }
 
 @media (max-width: 700px) {
