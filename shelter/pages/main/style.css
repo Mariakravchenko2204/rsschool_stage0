@@ -15,8 +15,6 @@ html {
 }
 
 
-
-
 @font-face {
     font-family: 'Georgia Regular';
     font-style: normal;
@@ -644,20 +642,7 @@ h3 {
     }
 }
 
-@media (max-width: 400px) {
-
-    .our_friends {
-        height: 791px;
-    }
-
-    .pets_content {
-        padding: 42px 10px 0 10px;
-        height: 707px;
-        /* justify-content: space-between; */
-        gap: 40px;
-        /* gap: 70px; */
-    }
-
+@media (max-width: 440px){
     .pets_content h3 {
 
         width: auto;
@@ -665,6 +650,24 @@ h3 {
         height: 64px;
         line-height: 32px;
     }
+}
+
+@media (max-width: 400px) {
+
+    .our_friends {
+        height: 791px;
+    }
+
+    .pets_content {
+        width: auto;
+        padding: 42px 10px 0 10px;
+        height: 707px;
+        /* justify-content: space-between; */
+        gap: 40px;
+        /* gap: 70px; */
+    }
+
+   
 
     .wrapper :nth-child(1) {
         order: 2
