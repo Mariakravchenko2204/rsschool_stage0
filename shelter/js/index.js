@@ -9,7 +9,8 @@ console.log("Responsive layout: 8\n");
 console.log("Burger menu is visible for screen width less than 768px: 4\n");
 console.log("Html is valid: 8\n")
 
-const navigation = document.querySelector('.navigation');
+const navigation = document.querySelector('.navigation_menu');
+const pop_up = document.querySelector('.pop_up')
 let pop_up_visible = false;
 
 const burger = document.querySelector('.burger');
@@ -19,6 +20,7 @@ const screen_element = document.querySelector('body');
 const toogleMenu = () => {
     navigation.classList.toggle('show');
     burger.classList.toggle('burger_menu');
+    pop_up.classList.toggle('hidden_pop_up')
 
     for (item of nav_item){
         item.classList.toggle('nav-item-menu')
@@ -27,9 +29,11 @@ const toogleMenu = () => {
 
 
 screen_element.addEventListener('click', (event) => {
+
+    console.log(event)
         
     if (pop_up_visible){
-        if(!event.target.classList.contains('navigation')){
+        if(!event.target.classList.contains('navigation_menu')){
             toogleMenu();
             pop_up_visible = false;
         }
