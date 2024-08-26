@@ -155,20 +155,20 @@ a {
 
 @media (max-width: 767px) {
 
-    .pop_up{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-    display: none;
+    .pop_up {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        display: none;
 
 
     }
 
-    .hidden_pop_up{
+    .hidden_pop_up {
         display: block;
 
     }
@@ -176,11 +176,11 @@ a {
     .header_content {
         position: relative;
     }
-   
+
 
     .navigation_menu {
 
-        height: 823px;
+        height: 100%;
         width: 320px;
         position: fixed;
         top: 0px;
@@ -201,6 +201,11 @@ a {
         right: 0;
         transform: translate();
         transition: all 0.6s ease;
+
+    }
+
+    .scroll_disable {
+        overflow-y: hidden;
     }
 
     .nav-menu {
@@ -585,11 +590,88 @@ h3 {
 }
 
 .slider {
+    width: auto;
     display: flex;
     gap: 90px;
+    justify-content: space-between;
 }
 
+.slider_wrapper {
+    display: flex;
+    overflow: hidden;
+}
+
+@keyframes move-right {
+
+    from {
+        transform: translateX(-52%)
+    }
+
+    to {
+        transform: translateX(0)
+    }
+}
+
+.transition-right {
+    animation-name: move-right;
+    animation-duration: 3s;
+}
+
+@keyframes move-left {
+
+    from {
+        transform: translateX(0)
+    }
+
+    to {
+        transform: translateX(-52.1%)
+    }
+}
+
+.transition-left {
+    animation-name: move-left;
+    animation-duration: 3s;
+}
+
+
+
+
+
 @media (max-width : 1279px) {
+
+    @keyframes move-right {
+
+        from {
+            transform: translateX(calc(-100%))
+        }
+
+        to {
+            transform: translateX(0)
+        }
+    }
+
+    .transition-right {
+        animation-name: move-right;
+        animation-duration: 3s;
+    }
+
+    @keyframes move-left {
+        from {
+            transform: translateX(0)
+        }
+
+        to {
+            transform: translateX(calc(-100% - 40px))
+        }
+    }
+
+    .transition-left {
+        animation-name: move-left;
+        animation-duration: 3s;
+
+     
+    }
+
     .pets {
         width: auto;
     }
@@ -599,14 +681,34 @@ h3 {
         padding: 80px 30px 0 30px;
     }
 
+    .slider_wrapper {
+        margin: 0 auto;
+        width: 580px;
+
+    }
+
+
+
     .slider {
+
+
         height: 435px;
+        flex-direction: column;
         justify-content: space-around;
-        gap: 10px;
+        gap: 40px;
         flex-wrap: wrap;
-        overflow: hidden;
+
+    }
+
+}
+
+@media (max-width: 760px){
+    .slider_wrapper{
+        width: 270px;
     }
 }
+
+
 
 .pets_content h3 {
     margin-top: 40px;
@@ -690,6 +792,7 @@ h3 {
 
 .arrow-right {
     margin-left: 53px;
+    margin-right: 0;
 }
 
 
@@ -723,25 +826,35 @@ h3 {
     }
 
     .arrow-right {
-        margin-left: 0;
+        margin-left: 12px;
     }
 
-    .arrow {
-        margin-right: 0;
+    .arrow-left {
+        margin-right: 12px;
     }
 }
 
 @media (max-width: 440px) {
     .pets_content h3 {
-
         width: auto;
         font-size: 25px;
         height: 64px;
         line-height: 32px;
     }
+
+
+    .transition-right {
+        animation-name: move-right;
+        animation-duration: 2s;
+    }
+
+    .transition-left {
+        animation-name: move-left;
+        animation-duration: 2s;
+    }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 460px) {
 
     .our_friends {
         height: 791px;
@@ -751,9 +864,8 @@ h3 {
         width: auto;
         padding: 42px 10px 0 10px;
         height: 707px;
-        /* justify-content: space-between; */
         gap: 40px;
-        /* gap: 70px; */
+     
     }
 
 
@@ -778,14 +890,18 @@ h3 {
     }
 
     .slider {
-        width: auto;
+        width: 270px;
         height: 455px;
         flex-direction: column;
     }
 
+    .slider_wrapper{
+        width: 270px;
+    }
+
     .card {
-        margin-left: 15px;
-        margin-top: -10px;
+        /* margin-left: 15px; */
+        /* margin-top: -10px; */
     }
 
     .slider :nth-child(1) {
