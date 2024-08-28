@@ -153,7 +153,7 @@ a {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.6);
         z-index: 2;
         display: none;
     
@@ -172,7 +172,7 @@ a {
    
     .navigation_menu {
 
-        height: 823px;
+        height: 100%;
         width: 320px;
         position: fixed;
         top: 0px;
@@ -194,6 +194,11 @@ a {
         transform: translate();
         transition: all 0.6s ease;
     }
+    .scroll_disable {
+        overflow-y: hidden;
+    }
+
+
 
     .nav-menu {
         display: flex;
@@ -414,6 +419,8 @@ h3 {
 .inactive {
     border: 2px solid #CDCDCD;
     color: #CDCDCD;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 .current {

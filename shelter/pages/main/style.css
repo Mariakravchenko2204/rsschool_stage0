@@ -567,6 +567,14 @@ h3 {
 
 /*our friends*/
 
+
+
+
+
+
+
+
+
 .our_friends {
     background-color: #F6F6F6;
     height: 877px;
@@ -587,6 +595,110 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 60px;
+}
+
+.pop_up_our_friends {
+    width: 100%;
+    height: 877px;
+    margin: 0 auto;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.hidden_pop_up {
+    display: flex;
+   
+
+}
+
+.pop_up_card {
+    /* margin: auto; */
+    display: flex;
+    
+    width: 900px;
+    height: 500px;
+    border-radius: 9px 9px 9px 9px;
+    background-color: #FAFAFA;
+    
+    box-shadow: 0px 2px 35px 14px #0D0D0D0A;
+}
+
+.pop_up_content {
+    display: flex;
+    flex-direction: column;
+
+    width: 351px;
+    height: 362px;
+    margin-top: 50px;
+    margin-left: 30px;
+
+
+
+
+}
+
+img{
+    border-radius: 9px 9px 9px 9px;
+}
+
+.pop_up_pet_type {
+    margin-top: 10px;
+    letter-spacing: 0.1em;
+}
+
+.pop_up_pet_name {
+    text-align: left;
+    height: auto;
+    letter-spacing: 0.06em;
+}
+
+.pop_up_description {
+    margin-top: 40px;
+    margin-bottom: 0;
+    line-height: 17px;
+}
+
+.characteristics {
+    margin-top: 40px;
+    margin-left: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.list-item{
+
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 0.13em;
+
+   
+}
+
+.modal_close{
+   position: relative;
+    width: 52px;
+    height: 52px;
+    top: -52px;
+    left: 10px;
+   
+    padding: 17px;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: solid 2px #F1CDB3;
+    opacity: 0px;
+
+    
+    
+    
+
 }
 
 .slider {
@@ -669,7 +781,7 @@ h3 {
         animation-name: move-left;
         animation-duration: 3s;
 
-     
+
     }
 
     .pets {
@@ -702,8 +814,8 @@ h3 {
 
 }
 
-@media (max-width: 760px){
-    .slider_wrapper{
+@media (max-width: 760px) {
+    .slider_wrapper {
         width: 270px;
     }
 }
@@ -865,7 +977,7 @@ h3 {
         padding: 42px 10px 0 10px;
         height: 707px;
         gap: 40px;
-     
+
     }
 
 
@@ -895,7 +1007,7 @@ h3 {
         flex-direction: column;
     }
 
-    .slider_wrapper{
+    .slider_wrapper {
         width: 270px;
     }
 

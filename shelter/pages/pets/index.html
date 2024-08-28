@@ -55,61 +55,21 @@
                     <h1>Our friends who <br>
                         are looking for a house</h1>
                     <div class="cards_container">
-                        <div class="card">
-                            <img src="../../assets/images/pets-katrine.png" alt="katrine">
-                            <p class="pet_name">Katrine</p>
-                            <button class="button_secondary">Learn more</button>
-                        </div>
-                        <div class="card">
-                            <img src="../../assets/images/pets-jennifer.png" alt="jennifer">
-                            <p class="pet_name">Jennifer</p>
-                            <button class="button_secondary">Learn more</button>
-                        </div>
-                        <div class="card">
-                            <img src="../../assets/images/pets-woody.png" alt="woody">
-                            <p class="pet_name">Woody</p>
-                            <button class="button_secondary">Learn more</button>
-                        </div>
-                        <div class="card">
-                            <img src="../../assets/images/pets-sophia.png" alt="woody">
-                            <p class="pet_name">Sophia</p>
-                            <button class="button_secondary">Learn more</button>
-                        </div>
-                        <div class="card">
-                            <img src="../../assets/images/pets-timmy.png" alt="woody">
-                            <p class="pet_name">Timmy</p>
-                            <button class="button_secondary">Learn more</button>
-                        </div>
-                        <div class="card">
-                            <img src="../../assets/images/pets-charly.png" alt="woody">
-                            <p class="pet_name">Charly</p>
-                            <button class="button_secondary">Learn more</button>
-                        </div>
-                        <div class="card">
-                            <img src="../../assets/images/pets-scarlet.png" alt="woody">
-                            <p class="pet_name">Scarlett</p>
-                            <button class="button_secondary">Learn more</button>
-                        </div>
-                        <div class="card">
-                            <img src="../../assets/images/pets-freddie.png" alt="woody">
-                            <p class="pet_name">Freddie</p>
-                            <button class="button_secondary">Learn more</button>
-                        </div>
                     </div>
                     <div class="navigation">
-                        <button class="button_paginator inactive">
+                        <button id="first" class="button_paginator inactive">
                             &lt;&lt; <!-- << -->
                         </button>
-                        <button class="button_paginator inactive">
+                        <button id="previous" class="button_paginator inactive">
                             &lt; <!-- < -->
                         </button>
-                        <button class="button_paginator current">
+                        <button id="current" class="button_paginator current">
                             1
                         </button>
-                        <button class="button_paginator active ">
+                        <button id="next" class="button_paginator active ">
                             &gt;<!-- > -->
                         </button>
-                        <button class="button_paginator active">
+                        <button id="last"class="button_paginator active">
                             &gt;&gt; <!-- >> -->
                         </button>
 
@@ -160,7 +120,11 @@
             </picture>
         </div>
     </footer>
-    <script src="../../js/index.js"></script>
+  
+    <script type="text/javascript" src="../../assets/pets.js"></script>
+    <script  src="../../js/pagination.js"></script>
+    <script  src="../../js/burger.js"></script>
+   
 </body>
 
 </html>

@@ -65,3 +65,38 @@ else{
     
 
 }
+
+pagination 
+
+общее количество страниц при ширине экрана 1280px - 6, при 768px - 8, при 320px - 16 страниц
+ set card number 1280px - 8, 768 - 6, 320 - 3
+ calculate number of pages  48/ cardNumber
+ 
+ 34567012
+ 45670123
+ 56701234
+ 
+ 
+ 
+ if resize => recalculate number of pages
+ 
+ 
+ varable current page 1 when page renders
+ 
+ 
+ renderProducts(cards, size, page) {
+ 	
+ 	const firstCardIndes   size * page - size   8 * 1 - 8.    8
+ 	 	const lastCardIndex. firstindex + size - 1 7
+ 	
+ }
+ 	
+ when press >  page++, rerender page
+ when page == 1 set buttons < << to  not active
+ when page == pageNumber > >>  set buttons not active
+ 
+ when press >> open last page
+ 
+ when press << open first page
+ when < open previous page
+ 

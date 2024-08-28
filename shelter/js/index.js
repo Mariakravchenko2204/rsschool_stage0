@@ -1,43 +1,43 @@
-//burger menu
-const navigation = document.querySelector('.navigation_menu');
-const pop_up = document.querySelector('.pop_up')
-let pop_up_visible = false;
-const body = document.querySelector('body');
+// // //burger menu
+// const navigation = document.querySelector('.navigation_menu');
+// const pop_up = document.querySelector('.pop_up')
+// let pop_up_visible = false;
+// const body = document.querySelector('body');
 
-const burger = document.querySelector('.burger');
-const nav_item = document.querySelectorAll('.nav-item');
-const screen_element = document.querySelector('body');
+// const burger = document.querySelector('.burger');
+// const nav_item = document.querySelectorAll('.nav-item');
+// const screen_element = document.querySelector('body');
 
-const toogleMenu = () => {
-    navigation.classList.toggle('show');
-    burger.classList.toggle('burger_menu');
-    pop_up.classList.toggle('hidden_pop_up');
-    body.classList.toggle('scroll_disable')
-
-
-    for (item of nav_item) {
-        item.classList.toggle('nav-item-menu')
-    }
-}
+// const toogleMenu = () => {
+//     navigation.classList.toggle('show');
+//     burger.classList.toggle('burger_menu');
+//     pop_up.classList.toggle('hidden_pop_up');
+//     body.classList.toggle('scroll_disable')
 
 
-screen_element.addEventListener('click', (event) => {
+//     for (item of nav_item) {
+//         item.classList.toggle('nav-item-menu')
+//     }
+// }
+
+
+// screen_element.addEventListener('click', (event) => {
 
 
 
-    if (pop_up_visible) {
-        if (!event.target.classList.contains('navigation_menu')) {
-            toogleMenu();
-            pop_up_visible = false;
-        }
-    } else {
-        if (event.target.classList.contains('burger__line') || event.target.classList.contains('burger')) {
-            toogleMenu();
+//     if (pop_up_visible) {
+//         if (!event.target.classList.contains('navigation_menu')) {
+//             toogleMenu();
+//             pop_up_visible = false;
+//         }
+//     } else {
+//         if (event.target.classList.contains('burger__line') || event.target.classList.contains('burger')) {
+//             toogleMenu();
 
-            pop_up_visible = true;
-        }
-    }
-})
+//             pop_up_visible = true;
+//         }
+//     }
+// })
 
 //slider
 
@@ -46,7 +46,8 @@ screen_element.addEventListener('click', (event) => {
 const obj = JSON.parse(pets)
 const slider = document.querySelector('.slider');
 const btnRight = document.querySelector('.arrow-right');
-const btnLeft = document.querySelector('.arrow-left')
+const btnLeft = document.querySelector('.arrow-left');
+
 
 let activeCards = [];
 let sideCards = [];
@@ -247,6 +248,7 @@ window.addEventListener('resize', (event) => {
 //cards setup
 generateActiveArray();
 generateSideArray();
+let card = document.querySelectorAll('.card');
 
 
 btnLeft.addEventListener('click', () => {
@@ -313,5 +315,97 @@ slider.addEventListener('animationend', (event) => {
     }
 
     generateSideArray();
+    // card = document.querySelectorAll('.card');
+    Array.prototype.forEach.call(activeCards, (item) => {
+        item.addEventListener('click', () => {
+            const key = item.getAttribute('key');
+            console.log("inside animation emd evend",key)
+            createPopUpCard(key);
+            
+            popup.classList.add('hidden_pop_up')
+        })
+    })
 })
+
+//popUP
+
+const popup = document.querySelector('.pop_up_our_friends');
+let isPopUpVisible = false;
+
+
+
+
+const createPopUpCard = (index) => {
+    popup.innerHTML='';
+    const card = document.createElement("div");
+    card.classList.add('popUpCard');
+
+    const pet = obj[index];
+
+    card.innerHTML = `<div class="pop_up_card">
+               <img class="pop_up_img" src="${pet.img}" alt="Jennifer">
+               <div class="pop_up_content">
+                <h3 class="pop_up_pet_name">${pet.name}</h3>
+                <h4 class="pop_up_pet_type">${pet.type} - ${pet.breed}</h4>
+                <h5 class="pop_up_description">${pet.description}</h5>
+                <ul class="characteristics">
+                    <li><h5 class="list-item"><b>Age: </b>${pet.age}</h5></li>
+                    <li><h5 class="list-item"><b>Inoculations:</b> ${pet.inoculations.join(',')}</h5></li>
+                    <li><h5 class="list-item"><b>Diseases:</b> ${pet.diseases.join(',')}</h5></li>
+                    <li><h5 class="list-item"><b>Parasites:</b> ${pet.parasites.join(',')}</h5></li>
+                </ul>
+               </div>
+              <img class="modal_close" src="../../assets/images/Vector.png" alt="modal_button">
+            </div>
+            `;
+
+           
+            
+    console.log(card)
+            popup.append(card)
+
+
+
+
+
+
+   
+    
+}
+
+
+
+
+
+// popup.classList.toggle('hidden_pop_up')
+
+Array.prototype.forEach.call(card, (item) => {
+    item.addEventListener('click', (event) => {
+        const key = item.getAttribute('key');
+        console.log(key)
+        createPopUpCard(key);
+        
+        popup.classList.add('hidden_pop_up')
+        isPopUpVisible=true
+    })
+})
+
+
+
+screen_element.addEventListener('click', (event) => {
+
+    if(isPopUpVisible){
+        console.log(event)
+    if(!event.target.classList.contains('pop_up_card')){
+        console.log("inside first if")
+        popup.classList.toggle('hidden_pop_up')
+    }else if (event.target.classList.contains('modal_close')){  
+        popup.classList.toggle('hidden_pop_up')
+    }
+    }
+    
+})
+
+
+
 
