@@ -203,7 +203,7 @@ generateSideArray();
 let card = document.querySelectorAll('.card');
 
 
-btnLeft.addEventListener('click', () => {
+btnRight.addEventListener('click', () => {
 
     if (lastClick === 'right') {
 
@@ -221,7 +221,7 @@ btnLeft.addEventListener('click', () => {
     slider.classList.add('transition-left')
 })
 
-btnRight.addEventListener('click', () => {
+btnLeft.addEventListener('click', () => {
     if (lastClick === 'left') {
 
         for (let i = cardNumber - 1; i >= 0; i--) {
