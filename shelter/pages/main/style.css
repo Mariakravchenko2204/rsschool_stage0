@@ -35,6 +35,10 @@ html {
     overflow: hidden;
 }
 
+body{
+    position: relative;
+}
+
 /*header*/
 
 .header {
