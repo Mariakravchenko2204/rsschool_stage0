@@ -7,19 +7,20 @@
     <title>Cozy House</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
-    
+
 </head>
 
 <body>
-    
 
+   
 
     <main class="start_screen">
-        <script src="../../js/index.js"></script>
         
+
 
         <div class="start_screen_wrapper">
             <div class="start_screen_block">
+                <div class="pop_up"></div>
                 <section class="header_wrapper">
                     <div class="header_content">
                         <div class="logo"><a href="#">
@@ -33,20 +34,27 @@
 
                         </div>
 
-                        <nav class="nav-menu">
-                            <ul class="nav-list">
-                                <li class="nav-item">About the shelter</li>
-                                <li class="nav-item"><a href="../pets/index.html" class="nav-link">Our pets</a></li>
-                                <li class="nav-item"><a href="#help_the_shelter" class="nav-link">Help the shelter</a>
-                                </li>
-                                <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
-                            </ul>
-                        </nav>
                         <div class="burger">
                             <div class="burger__line"></div>
                             <div class="burger__line"></div>
                             <div class="burger__line"></div>
                         </div>
+
+                        <div class="navigation_menu">
+                            <nav class="nav-menu">
+                                <ul class="nav-list">
+                                    <li class="nav-item">About the shelter</li>
+                                    <li class="nav-item"><a href="../pets/index.html" class="nav-link">Our pets</a></li>
+                                    <li class="nav-item"><a href="#help_the_shelter" class="nav-link">Help the
+                                            shelter</a>
+                                    </li>
+                                    <li class="nav-item"><a href="#contacts" class="nav-link">Contacts</a></li>
+                                </ul>
+                            </nav>
+                            
+                        </div>
+
+
                     </div>
                 </section>
                 <section class="not_only">
@@ -65,17 +73,19 @@
                             </div>
                             <a href="#our_pets" class="button_make_friend">Make a friend</a>
                         </div>
-                        <!-- <img class="puppy" src="../../assets/images/start-screen-puppy.png" alt="puppy"> -->
-
-                        <picture class="puppy">
-                            <source srcset="../../assets/images/start-screen-puppy320.png" type="image/png"
-                                media="(max-width:600px)">
-                            <source srcset="../../assets/images/start-screen-puppy768.png" type="image/png"
-                                media="(max-width:1270px)">
-                            <source srcset="../../assets/images/start-screen-puppy.png" type="image/png"
-                                media="(max-width:1280px)">
-                            <img src="../../assets/images/start-screen-puppy.png" alt="puppy">
-                        </picture>
+                    
+                       
+                            <picture class="puppy">
+                                <source srcset="../../assets/images/start-screen-puppy320.png" type="image/png"
+                                    media="(max-width:600px)">
+                                <source srcset="../../assets/images/start-screen-puppy768.png" type="image/png"
+                                    media="(max-width:1279px)">
+                                <source srcset="../../assets/images/start-screen-puppy.png" type="image/png"
+                                    media="(max-width:1280px)">
+                                <img src="../../assets/images/start-screen-puppy.png" alt="puppy">
+                            </picture>
+                       
+                        
                     </div>
 
 
@@ -119,6 +129,10 @@
 
         <section class="our_friends">
 
+            <div class="pop_up_our_friends"></div>
+            
+
+         
             <div class="pets" id="our_pets">
                 <div class="pets_content">
                     <h3>Our friends who <br> are looking for a house</h3>
@@ -126,24 +140,11 @@
                     <div class="wrapper">
 
                         <img class="arrow arrow-left" src="../../assets/images/Arrow.svg" alt="arrow_left">
+                        <div class="slider_wrapper">
                         <div class="slider">
-                            <div class="card">
-                                <img src="../../assets/images/pets-katrine.png" alt="katrine">
-                                <p class="pet_name">Katrine</p>
-                                <button class="button_secondary">Learn more</button>
-                            </div>
-                            <div class="card">
-                                <img src="../../assets/images/pets-jennifer.png" alt="jennifer">
-                                <p class="pet_name">Jennifer</p>
-                                <button class="button_secondary">Learn more</button>
-                            </div>
-                            <div class="card card2">
-                                <img src="../../assets/images/pets-woody.png" alt="woody">
-                                <p class="pet_name">Woody</p>
-                                <button class="button_secondary">Learn more</button>
-                            </div>
+                         
                         </div>
-
+                    </div>
                         <img class="arrow arrow-right" src="../../assets/images/Arrow-right.png" alt="arrow_left">
                     </div>
 
@@ -262,6 +263,10 @@
 
         </div>
     </footer>
+    <script type="text/javascript" src="../../assets/pets.js"></script>
+    <script src="../../js/index.js"></script>
+    <script  src="../../js/burger.js"></script>
+  
 </body>
 
 </html>
