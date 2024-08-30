@@ -14,6 +14,10 @@ html {
     box-sizing: inherit;
 }
 
+body{
+    position: relative;
+}
+
 @font-face {
     font-family: 'Georgia Regular';
     font-style: normal;
