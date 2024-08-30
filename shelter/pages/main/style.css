@@ -32,7 +32,7 @@ html {
 }
 
 .scroll_disable {
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 /*header*/
