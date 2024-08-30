@@ -272,7 +272,9 @@ slider.addEventListener('animationend', (event) => {
         item.addEventListener('click', () => {
             const key = item.getAttribute('key');
             createPopUpCard(key);
-            popup.classList.add('hidden_pop_up')
+            popup.classList.add('hidden_pop_up');
+            body.classList.add('scroll_disable')
+            html.classList.add('scroll_disable')
         })
     })
 })
