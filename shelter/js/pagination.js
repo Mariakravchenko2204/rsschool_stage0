@@ -108,6 +108,25 @@ const makeFirstAndPreviousDisabled = () => {
     prevButton.classList.add('inactive');
 }
 
+//this is method for adding event listener to pagination cards
+
+const addListenerToCards = () => {
+
+    const cardContainer = document.querySelectorAll('.card')
+    Array.prototype.forEach.call(cardContainer, (item) => {
+
+        item.addEventListener('click', (event) => {
+
+            const key = item.getAttribute('key');
+            createPopUpCard(key);
+            popup.classList.add('hidden_pop_up')
+            body.classList.add('scroll_disable')
+            html.classList.add('scroll_disable')
+
+        })
+    })
+}
+
 
 const renderPageCards = () => {
 
@@ -192,6 +211,7 @@ nextButton.addEventListener('click', () => {
     makeFirstAndPreviousActive()
 
     renderPageCards()
+    addListenerToCards()
 
     if (page === totalPages) {
         makeNextAndLastDisabled()
@@ -203,6 +223,7 @@ last.addEventListener('click', () => {
     page = totalPages;
     current.innerHTML = page;
     renderPageCards()
+    addListenerToCards()
     makeNextAndLastDisabled();
     makeFirstAndPreviousActive()
 })
@@ -211,6 +232,7 @@ firstButton.addEventListener('click', () => {
     page = 1;
     current.innerHTML = page;
     renderPageCards()
+    addListenerToCards()
     makeNextAndLastActive();
     makeFirstAndPreviousDisabled()
 })
@@ -219,6 +241,7 @@ prevButton.addEventListener('click', () => {
     page--;
     current.innerHTML = page;
     renderPageCards()
+    addListenerToCards()
 
     if (page === 1) {
         makeNextAndLastActive();
@@ -260,36 +283,42 @@ const createPopUpCard = (index) => {
 
 }
 
-const cardContainer = document.querySelectorAll('.card')
+addListenerToCards()
+
+// const cardContainer = document.querySelectorAll('.card')
 
 
-Array.prototype.forEach.call(cardContainer, (item) => {
+// Array.prototype.forEach.call(cardContainer, (item) => {
 
 
-    item.addEventListener('click', (event) => {
+//     item.addEventListener('click', (event) => {
 
-        const key = item.getAttribute('key');
-        createPopUpCard(key);
-        popup.classList.add('hidden_pop_up')
-        body.classList.add('scroll_disable')
+//         const key = item.getAttribute('key');
+//         createPopUpCard(key);
+//         popup.classList.add('hidden_pop_up')
+//         body.classList.add('scroll_disable')
+//         html.classList.add('scroll_disable')
 
-    })
-})
+//     })
+// })
 
 window.addEventListener('resize', () => {
 
+    addListenerToCards()
 
-    Array.prototype.forEach.call(cardContainer, (item) => {
+    // const cardContainer = document.querySelectorAll('.card')
+    // Array.prototype.forEach.call(cardContainer, (item) => {
 
-        item.addEventListener('click', (event) => {
+    //     item.addEventListener('click', (event) => {
 
-            const key = item.getAttribute('key');
-            createPopUpCard(key);
-            popup.classList.add('hidden_pop_up')
-            body.classList.add('scroll_disable')
+    //         const key = item.getAttribute('key');
+    //         createPopUpCard(key);
+    //         popup.classList.add('hidden_pop_up')
+    //         body.classList.add('scroll_disable')
+    //         html.classList.add('scroll_disable')
 
-        })
-    })
+    //     })
+    // })
 
 })
 
@@ -311,5 +340,8 @@ popup.addEventListener('click', (event) => {
         popup.classList.toggle('hidden_pop_up');
 
         body.classList.remove('scroll_disable')
+        html.classList.remove('scroll_disable')
+
+
     }
 })

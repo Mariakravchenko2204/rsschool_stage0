@@ -319,6 +319,7 @@ Array.prototype.forEach.call(activeCards, (item) => {
         createPopUpCard(key);
         popup.classList.add('hidden_pop_up')
         body.classList.add('scroll_disable')
+        html.classList.add('scroll_disable')
 
     })
 })
@@ -333,6 +334,7 @@ window.addEventListener('resize', () => {
             createPopUpCard(key);
             popup.classList.add('hidden_pop_up')
             body.classList.add('scroll_disable')
+            html.classList.add('scroll_disable')
         })
     })
 
@@ -355,5 +357,6 @@ popup.addEventListener('click', (event) => {
         popup.classList.toggle('hidden_pop_up');
 
         body.classList.remove('scroll_disable')
+        html.classList.remove('scroll_disable')
     }
 })
