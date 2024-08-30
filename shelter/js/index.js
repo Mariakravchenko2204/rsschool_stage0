@@ -1,46 +1,4 @@
-// // //burger menu
-// const navigation = document.querySelector('.navigation_menu');
-// const pop_up = document.querySelector('.pop_up')
-// let pop_up_visible = false;
-// const body = document.querySelector('body');
-
-// const burger = document.querySelector('.burger');
-// const nav_item = document.querySelectorAll('.nav-item');
-// const screen_element = document.querySelector('body');
-
-// const toogleMenu = () => {
-//     navigation.classList.toggle('show');
-//     burger.classList.toggle('burger_menu');
-//     pop_up.classList.toggle('hidden_pop_up');
-//     body.classList.toggle('scroll_disable')
-
-
-//     for (item of nav_item) {
-//         item.classList.toggle('nav-item-menu')
-//     }
-// }
-
-
-// screen_element.addEventListener('click', (event) => {
-
-
-
-//     if (pop_up_visible) {
-//         if (!event.target.classList.contains('navigation_menu')) {
-//             toogleMenu();
-//             pop_up_visible = false;
-//         }
-//     } else {
-//         if (event.target.classList.contains('burger__line') || event.target.classList.contains('burger')) {
-//             toogleMenu();
-
-//             pop_up_visible = true;
-//         }
-//     }
-// })
-
 //slider
-
 
 // initial load 
 const obj = JSON.parse(pets)
@@ -60,7 +18,7 @@ let sideIndexArray = [];
 let prevIndexArray = [];
 
 const width = document.body.clientWidth;
-console.log(width)
+
 let cardNumber = 0;
 
 if (width > 1280) {
@@ -73,7 +31,7 @@ if (width > 1280) {
 
 //methods
 const createCard = (index) => {
-   
+
     const card = document.createElement("div");
     card.classList.add('card');
     card.setAttribute('key', index)
@@ -106,8 +64,6 @@ const generateActiveArray = () => {
         let index = Math.floor(Math.random() * 8);
         if (activeIndexArray.indexOf(index) === -1) activeIndexArray.push(index)
     }
-
-    console.log("Index array", activeIndexArray);
 
     activeIndexArray.map(e => {
         const card = createCard(e);
@@ -173,11 +129,10 @@ const switchActiveAndPrevArrays = () => {
 
     activeCards = prevCards;
     activeIndexArray = prevIndexArray;
-
     prevIndexArray = copyOfActiveIndexArray;
     prevCards = copyOfActiveCards;
 
-    
+
 }
 
 const copyActiveToPrevArray = () => {
@@ -205,14 +160,14 @@ window.addEventListener('resize', (event) => {
             addOneCardToSideArray();
             slider.appendChild(card);
             cardNumber = 3;
-    
+
         }
 
     } else if (width < 1080 && width > 760) {
 
         if (cardNumber === 3) {
             activeIndexArray.pop();
-            console.log("slider last child", slider.lastElementChild)
+         
             activeCards.pop();
             slider.removeChild(slider.lastElementChild)
             sideIndexArray.pop();
@@ -223,20 +178,17 @@ window.addEventListener('resize', (event) => {
             let card = addOneCardToActiveArray();
             addOneCardToSideArray();
             slider.appendChild(card);
-            cardNumber = 2; 
+            cardNumber = 2;
 
         }
-        
+
     } else if (width < 760) {
         if (cardNumber === 2) {
             activeIndexArray.pop();
-        
             activeCards.pop();
             slider.removeChild(slider.lastElementChild)
-
             sideIndexArray.pop();
             sideCards.pop()
-
             cardNumber = 1;
         }
 
@@ -255,8 +207,8 @@ btnLeft.addEventListener('click', () => {
 
     if (lastClick === 'right') {
 
-        for (let i = cardNumber - 1; i>= 0; i--){
-            slider.appendChild(prevCards[i])     
+        for (let i = cardNumber - 1; i >= 0; i--) {
+            slider.appendChild(prevCards[i])
         }
 
         switchActiveAndPrevArrays();
@@ -272,12 +224,12 @@ btnLeft.addEventListener('click', () => {
 btnRight.addEventListener('click', () => {
     if (lastClick === 'left') {
 
-        for (let i = cardNumber - 1; i>= 0; i--){
+        for (let i = cardNumber - 1; i >= 0; i--) {
             slider.insertBefore(prevCards[i], slider.firstElementChild)
         }
-    
+
         switchActiveAndPrevArrays();
-    }else{
+    } else {
         sideCards.map(card => {
             slider.insertBefore(card, slider.firstElementChild);
         })
@@ -285,7 +237,7 @@ btnRight.addEventListener('click', () => {
         copySideToActiveArray();
 
     }
-  
+
     slider.classList.add('transition-right')
 
 })
@@ -299,11 +251,11 @@ slider.addEventListener('animationend', (event) => {
             let child = slider.firstElementChild;
             slider.removeChild(child)
         }
-        lastClick = 'left';  
+        lastClick = 'left';
     }
 
     if (event.animationName === 'move-right') {
-        slider.classList.remove('transition-right')    
+        slider.classList.remove('transition-right')
 
         for (let i = 0; i < cardNumber; i++) {
             let child = slider.lastElementChild;
@@ -311,32 +263,27 @@ slider.addEventListener('animationend', (event) => {
         }
 
         lastClick = 'right';
-      
+
     }
 
     generateSideArray();
-    // card = document.querySelectorAll('.card');
+
     Array.prototype.forEach.call(activeCards, (item) => {
         item.addEventListener('click', () => {
             const key = item.getAttribute('key');
-            console.log("inside animation emd evend",key)
             createPopUpCard(key);
-            
             popup.classList.add('hidden_pop_up')
         })
     })
 })
-
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //popUP
 
 const popup = document.querySelector('.pop_up_our_friends');
-let isPopUpVisible = false;
-
-
-
+let modal_close;
 
 const createPopUpCard = (index) => {
-    popup.innerHTML='';
+    popup.innerHTML = '';
     const card = document.createElement("div");
     card.classList.add('popUpCard');
 
@@ -349,63 +296,64 @@ const createPopUpCard = (index) => {
                 <h4 class="pop_up_pet_type">${pet.type} - ${pet.breed}</h4>
                 <h5 class="pop_up_description">${pet.description}</h5>
                 <ul class="characteristics">
-                    <li><h5 class="list-item"><b>Age: </b>${pet.age}</h5></li>
-                    <li><h5 class="list-item"><b>Inoculations:</b> ${pet.inoculations.join(',')}</h5></li>
-                    <li><h5 class="list-item"><b>Diseases:</b> ${pet.diseases.join(',')}</h5></li>
-                    <li><h5 class="list-item"><b>Parasites:</b> ${pet.parasites.join(',')}</h5></li>
+                    <li class="item"><h5 class="list-item"><b class="bold">Age:</b>${pet.age}</h5></li>
+                    <li class="item"><h5 class="list-item"><b class="bold">Inoculations:</b> ${pet.inoculations.join(', ')}</h5></li>
+                    <li class="item"><h5 class="list-item"><b class="bold">Diseases:</b> ${pet.diseases.join(', ')}</h5></li>
+                    <li class="item"><h5 class="list-item"><b class="bold">Parasites:</b> ${pet.parasites.join(', ')}</h5></li>
                 </ul>
                </div>
               <img class="modal_close" src="../../assets/images/Vector.png" alt="modal_button">
             </div>
             `;
-
-           
-            
-    console.log(card)
-            popup.append(card)
+    popup.append(card);
 
 
-
-
-
-
-   
-    
 }
 
+Array.prototype.forEach.call(activeCards, (item) => {
 
 
-
-
-// popup.classList.toggle('hidden_pop_up')
-
-Array.prototype.forEach.call(card, (item) => {
     item.addEventListener('click', (event) => {
+
         const key = item.getAttribute('key');
-        console.log(key)
         createPopUpCard(key);
-        
         popup.classList.add('hidden_pop_up')
-        isPopUpVisible=true
+        body.classList.add('scroll_disable')
+
     })
 })
 
+window.addEventListener('resize', () => {
 
 
-screen_element.addEventListener('click', (event) => {
+    Array.prototype.forEach.call(activeCards, (item) => {
 
-    if(isPopUpVisible){
-        console.log(event)
-    if(!event.target.classList.contains('pop_up_card')){
-        console.log("inside first if")
-        popup.classList.toggle('hidden_pop_up')
-    }else if (event.target.classList.contains('modal_close')){  
-        popup.classList.toggle('hidden_pop_up')
-    }
-    }
-    
+        item.addEventListener('click', (event) => {
+            const key = item.getAttribute('key');
+            createPopUpCard(key);
+            popup.classList.add('hidden_pop_up')
+            body.classList.add('scroll_disable')
+        })
+    })
+
 })
 
+popup.addEventListener('click', (event) => {
 
+    if (!(event.target.classList.contains('pop_up_pet_name')
+        || event.target.classList.contains('pop_up_pet_type')
+        || event.target.classList.contains('pop_up_description')
+        || event.target.classList.contains('list-item')
+        || event.target.classList.contains('characteristics')
+        || event.target.classList.contains('bold')
+        || event.target.classList.contains('pop_up_img')
+        || event.target.classList.contains('pop_up_card')
+        || event.target.classList.contains('pop_up_content')
+        || event.target.classList.contains('item')
+    )) {
 
+        popup.classList.toggle('hidden_pop_up');
 
+        body.classList.remove('scroll_disable')
+    }
+})

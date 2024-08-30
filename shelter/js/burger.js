@@ -26,7 +26,9 @@ screen_element.addEventListener('click', (event) => {
 
 
     if (pop_up_visible) {
-        if (!event.target.classList.contains('navigation_menu')) {
+        console.log(event)
+        if (!(event.target.classList.contains('navigation_menu') ||
+             event.target.classList.contains('nav-list')) ) {
             toogleMenu();
             pop_up_visible = false;
         }

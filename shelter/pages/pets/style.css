@@ -30,6 +30,10 @@ html {
         url('../../assets/fonts/arial/ARIAL.woff') format('woff');
 }
 
+.scroll_disable {
+    overflow-y: hidden;
+}
+
 /* header */
 
 .header {
@@ -147,7 +151,7 @@ a {
 
 @media (max-width: 767px) {
 
-    .pop_up{
+    .pop_up {
         width: 100%;
         height: 100%;
         position: absolute;
@@ -156,20 +160,19 @@ a {
         background-color: rgba(0, 0, 0, 0.6);
         z-index: 2;
         display: none;
-    
-    
-        }
-    
-        .hidden_pop_up{
-            display: block;
-    
-        }
+
+    }
+
+    .hidden_pop_up {
+        display: block;
+
+    }
 
     .header_content {
         position: relative;
     }
 
-   
+
     .navigation_menu {
 
         height: 100%;
@@ -186,7 +189,6 @@ a {
         transform: translate();
         transition: all 0.6s ease-in-out;
 
-
     }
 
     .show {
@@ -194,11 +196,10 @@ a {
         transform: translate();
         transition: all 0.6s ease;
     }
+
     .scroll_disable {
         overflow-y: hidden;
     }
-
-
 
     .nav-menu {
         display: flex;
@@ -247,6 +248,7 @@ a {
     .header {
         padding: 30px 20px;
     }
+
     .header_content {
         width: 100%;
     }
@@ -257,6 +259,127 @@ a {
 .our_friends {
     background-color: #F6F6F6;
     height: 1342px;
+}
+
+/*POPUP*/
+
+.pop_up_our_friends {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.hidden_pop_up {
+    display: flex;
+
+
+}
+
+.pop_up_card {
+    display: flex;
+    width: 900px;
+    height: 500px;
+    border-radius: 9px 9px 9px 9px;
+    background-color: #FAFAFA;
+    box-shadow: 0px 2px 35px 14px #0D0D0D0A;
+}
+
+.pop_up_content {
+    display: flex;
+    flex-direction: column;
+    width: 351px;
+    height: 362px;
+    margin-top: 50px;
+    margin-left: 30px;
+
+}
+
+img {
+    border-radius: 9px 9px 9px 9px;
+}
+
+.pop_up_pet_type {
+    margin-top: 10px;
+    letter-spacing: 0.1em;
+    font-family: 'Georgia Regular';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    text-align: left;
+
+}
+
+.pop_up_pet_name {
+    text-align: left;
+    height: auto;
+    letter-spacing: 0.06em;
+    margin-bottom: 0;
+}
+
+.pop_up_description {
+    margin-top: 40px;
+    margin-bottom: 0;
+    line-height: 17px;
+    font-family: 'Georgia Regular';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 16.5px;
+    letter-spacing: 0.06em;
+    text-align: left;
+
+}
+
+.characteristics {
+    margin-top: 40px;
+    margin-left: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+li::marker {
+    color: #F1CDB3
+}
+
+.list-item {
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 0.13em;
+    font-family: 'Georgia Regular';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 16.5px;
+    letter-spacing: 0.06em;
+    text-align: left;
+
+}
+
+.modal_close {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    top: -52px;
+    left: 10px;
+    padding: 17px;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.0);
+    border: solid 2px #F1CDB3;
+    opacity: 0px;
+
+}
+
+.modal_close:hover {
+    cursor: pointer;
 }
 
 .our_friends_block {
@@ -323,6 +446,62 @@ h3 {
 }
 
 @media (max-width : 1279px) {
+
+    .pop_up_card {
+        display: flex;
+        width: 630px;
+        max-height: 370px;
+
+    }
+
+    .pop_up_img {
+        width: 350px;
+        height: 350px;
+        align-self: center;
+    }
+
+    .pop_up_content {
+        width: 260px;
+        height: 303px;
+        margin-top: 10px;
+        margin-left: 10px;
+
+    }
+
+    .pop_up_pet_type {
+        margin-top: 10px;
+        letter-spacing: 0.1em;
+    }
+
+    .pop_up_pet_name {
+        width: auto;
+
+    }
+
+    .pop_up_description {
+        margin-top: 20px;
+        font-size: 13px;
+        line-height: 14px;
+        height: 98px;
+        width: 262px;
+
+    }
+
+    .characteristics {
+        margin-top: 20px;
+        margin-left: 14px;
+        gap: 5px;
+
+    }
+
+
+
+    .modal_close {
+        left: 5px;
+
+    }
+
+
     .our_friends {
         width: 100%;
         height: 1733px;
@@ -443,6 +622,85 @@ h3 {
     background-color: none;
 }
 
+@media (max-width: 760px) {
+
+
+    .pop_up_our_friends {
+        width: 100%;
+        height: 1649px;
+        margin: 0 auto;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 2;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .hidden_pop_up {
+        display: flex;
+
+    }
+
+    .pop_up_img {
+        display: none;
+
+    }
+
+
+    .pop_up_card {
+        width: 240px;
+        max-height: 420px;
+
+    }
+
+    .pop_up_content {
+        width: 220px;
+        height: 303px;
+        margin-top: 10px;
+        margin-left: 10px;
+
+    }
+
+
+
+    .pop_up_pet_type {
+        margin-top: 10px;
+        letter-spacing: 0.1em;
+        text-align: center;
+    }
+
+    .pop_up_pet_name {
+        width: auto;
+        text-align: center;
+    }
+
+    .pop_up_description {
+        margin-top: 20px;
+        font-size: 13px;
+        line-height: 14px;
+        height: 98px;
+        width: 220px;
+        letter-spacing: 0.06em;
+
+    }
+
+    .characteristics {
+        margin-top: 36px;
+        margin-left: 14px;
+        line-height: 17px;
+        gap: 8px;
+
+    }
+
+
+
+    .modal_close {
+        left: -10px;
+
+    }
+}
+
 @media (max-width: 400px) {
     .our_friends {
         height: 1649px;
@@ -459,12 +717,12 @@ h3 {
         line-height: 32px;
         font-size: 25px;
         margin-bottom: 42px;
-       
+
     }
 
-    .navigation{
+    .navigation {
         width: 100%;
-        
+
     }
 }
 
@@ -635,6 +893,7 @@ h3 {
     .footer_puppy {
         margin: 0 auto;
     }
+
     .contacts h3 {
         width: 100%;
         height: auto;

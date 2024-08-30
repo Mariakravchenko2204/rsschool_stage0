@@ -11,7 +11,6 @@ const prevButton = document.querySelector('#previous')
 
 
 const width = document.body.clientWidth;
-console.log(width)
 let cardNumber = 0;
 
 if (width > 1280) {
@@ -124,7 +123,6 @@ const renderPageCards = () => {
 }
 
 
-
 generateCardArray();
 
 
@@ -185,23 +183,21 @@ window.addEventListener('resize', (event) => {
     }
 
 
-
-
 })
 
 nextButton.addEventListener('click', () => {
     page++;
     current.innerHTML = page;
 
-   makeFirstAndPreviousActive()
+    makeFirstAndPreviousActive()
 
     renderPageCards()
-    console.log(page, totalPages)
+
     if (page === totalPages) {
         makeNextAndLastDisabled()
     }
 })
-// cardArray.map(card => console.log(card.getAttribute('key')))
+
 
 last.addEventListener('click', () => {
     page = totalPages;
@@ -215,8 +211,8 @@ firstButton.addEventListener('click', () => {
     page = 1;
     current.innerHTML = page;
     renderPageCards()
-   makeNextAndLastActive();
-   makeFirstAndPreviousDisabled()
+    makeNextAndLastActive();
+    makeFirstAndPreviousDisabled()
 })
 
 prevButton.addEventListener('click', () => {
@@ -224,12 +220,96 @@ prevButton.addEventListener('click', () => {
     current.innerHTML = page;
     renderPageCards()
 
-    if(page === 1){
+    if (page === 1) {
         makeNextAndLastActive();
         makeFirstAndPreviousDisabled()
     }
-   
+
+})
+//popup
+
+const popup = document.querySelector('.pop_up_our_friends');
+let modal_close;
+
+const createPopUpCard = (index) => {
+    popup.innerHTML = '';
+    const card = document.createElement("div");
+    card.classList.add('popUpCard');
+
+    const pet = obj[index];
+
+    card.innerHTML = `<div class="pop_up_card">
+               <img class="pop_up_img" src="${pet.img}" alt="Jennifer">
+               <div class="pop_up_content">
+                <h3 class="pop_up_pet_name">${pet.name}</h3>
+                <h4 class="pop_up_pet_type">${pet.type} - ${pet.breed}</h4>
+                <h5 class="pop_up_description">${pet.description}</h5>
+                <ul class="characteristics">
+                    <li class="item"><h5 class="list-item"><b class="bold">Age:</b>${pet.age}</h5></li>
+                    <li class="item"><h5 class="list-item"><b class="bold">Inoculations:</b> ${pet.inoculations.join(', ')}</h5></li>
+                    <li class="item"><h5 class="list-item"><b class="bold">Diseases:</b> ${pet.diseases.join(', ')}</h5></li>
+                    <li class="item"><h5 class="list-item"><b class="bold">Parasites:</b> ${pet.parasites.join(', ')}</h5></li>
+                </ul>
+               </div>
+              <img class="modal_close" src="../../assets/images/Vector.png" alt="modal_button">
+            </div>
+            `;
+    popup.append(card);
+
+
+
+}
+
+const cardContainer = document.querySelectorAll('.card')
+
+
+Array.prototype.forEach.call(cardContainer, (item) => {
+
+
+    item.addEventListener('click', (event) => {
+
+        const key = item.getAttribute('key');
+        createPopUpCard(key);
+        popup.classList.add('hidden_pop_up')
+        body.classList.add('scroll_disable')
+
+    })
 })
 
+window.addEventListener('resize', () => {
 
 
+    Array.prototype.forEach.call(cardContainer, (item) => {
+
+        item.addEventListener('click', (event) => {
+
+            const key = item.getAttribute('key');
+            createPopUpCard(key);
+            popup.classList.add('hidden_pop_up')
+            body.classList.add('scroll_disable')
+
+        })
+    })
+
+})
+
+popup.addEventListener('click', (event) => {
+
+
+    if (!(event.target.classList.contains('pop_up_pet_name')
+        || event.target.classList.contains('pop_up_pet_type')
+        || event.target.classList.contains('pop_up_description')
+        || event.target.classList.contains('list-item')
+        || event.target.classList.contains('characteristics')
+        || event.target.classList.contains('bold')
+        || event.target.classList.contains('pop_up_img')
+        || event.target.classList.contains('pop_up_card')
+        || event.target.classList.contains('pop_up_content')
+        || event.target.classList.contains('item')
+    )) {
+
+        popup.classList.toggle('hidden_pop_up');
+
+        body.classList.remove('scroll_disable')
+    }
+})
