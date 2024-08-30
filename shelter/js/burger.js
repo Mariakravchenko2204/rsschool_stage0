@@ -3,6 +3,7 @@ const navigation = document.querySelector('.navigation_menu');
 const pop_up = document.querySelector('.pop_up')
 let pop_up_visible = false;
 const body = document.querySelector('body');
+const html = document.documentElement;
 
 const burger = document.querySelector('.burger');
 const nav_item = document.querySelectorAll('.nav-item');
@@ -13,6 +14,7 @@ const toogleMenu = () => {
     burger.classList.toggle('burger_menu');
     pop_up.classList.toggle('hidden_pop_up');
     body.classList.toggle('scroll_disable')
+    html.classList.toggle('scroll_disable')
 
 
     for (item of nav_item) {
