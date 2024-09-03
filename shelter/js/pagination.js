@@ -40,7 +40,7 @@ const createCard = (index) => {
     const button = document.createElement('button');
     button.classList.add('button_secondary');
     button.innerHTML = 'Learn more';
-    button.onclick = function () { console.log(`${pet.name} button is clicked`) }
+   
 
     card.appendChild(img);
     card.appendChild(name);
