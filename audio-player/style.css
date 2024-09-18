@@ -1,0 +1,136 @@
+html {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./assets/img/dontstartnow.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(8px);
+    position: absolute;
+    z-index: -1;
+}
+
+.wrap {
+    
+    height: 100vh;
+    width: 100vw;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player {
+    height: 500px;
+    width: 340px;
+    background: -webkit-linear-gradient(20deg, #502F4C, #C8B8DB);
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    border-radius: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+   
+}
+
+.player__navigation {
+
+    filter: invert(100%);
+    width: 30px;
+    height: 30px;
+}
+
+.play {
+    width: 50px;
+    height: 50px;
+    align-self: center;
+}
+
+.song__picture{
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin: 0 auto;
+    margin-top: 10px;
+    /* border: 2px solid #000000; */
+}
+
+.singer__name{
+    font-family: "Montserrat", sans-serif;
+    color: #64F58D;
+    font-size: 20px;
+}
+
+.song{
+    font-family: "Montserrat", sans-serif;
+    color: #ffff;
+    font-size: 16px;
+}
+
+.progress__bar{
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.progress__bar
+
+.song__duration{
+    font-family: "Montserrat", sans-serif;
+    color: rgb(193, 255, 6);
+    font-size: 14px;
+}
+
+.current__time{
+    font-family: "Montserrat", sans-serif;
+    color: #ffff;
+    font-size: 14px;
+}
+
+input[type="range"] {
+    height: 10px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.navigation__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+.info{
+    margin: 0 auto ;
+    align-self: center; 
+    margin-top: 10px;
+    text-align: center;
+     
+}
+
