@@ -20,7 +20,7 @@ html {
 
 .wrap {
 
-    height: calc(100vh - 200px);
+    height: calc(100vh - 120px);
     width: 100vw;
 
     display: flex;
@@ -29,9 +29,9 @@ html {
 }
 
 .player {
-    height: 520px;
+    height: 420px;
     width: 340px;
-    background: -webkit-linear-gradient(20deg, #502F4C, #C8B8DB);
+    background: -webkit-linear-gradient(20deg, #B76E79, #E0BFB8);
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -52,8 +52,8 @@ html {
 
 .song__picture {
     border-radius: 50%;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     margin: 0 auto;
     margin-top: 10px;
@@ -61,7 +61,7 @@ html {
 
 }
 
-.singer__name {
+.artist {
     font-family: "Montserrat", sans-serif;
     color: #64F58D;
     font-size: 20px;
@@ -172,12 +172,12 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 footer {
-    height: 200px;
+    height: 120px;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: -webkit-linear-gradient(20deg, #502F4C, #C8B8DB);
+    background: -webkit-linear-gradient(20deg, #B76E79, #E0BFB8);
 
 }
 

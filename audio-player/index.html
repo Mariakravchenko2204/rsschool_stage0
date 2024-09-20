@@ -17,6 +17,7 @@
 
     <div class="wrap">
         <div class="player">
+            <audio id="audio" src="" preload="metadata"></audio>
             <img src="./assets/img/dontstartnow.png" alt="picture" class="song__picture">
             <div class="navigation">
 
@@ -24,24 +25,25 @@
 
 
                 <div class="info">
-                    <p class="singer__name">Dua Lipa</p>
-                    <p class="song">Don't Start Now</p>
+                    <p class="artist"></p>
+                    <p class="song"></p>
                 </div>
 
                 <div class="navigation__buttons">
                     <img class="player__navigation" src="./assets/svg/backward.png" alt="backward">
-                    <img class="player__navigation play" src="./assets/svg/play.png" alt="play">
+                    <img class="player__navigation play" src="" alt="play">
                     <img class="player__navigation" src="./assets/svg/forward.png" alt="forward">
                 </div>
+                <!-- ./assets/svg/play.png -->
 
 
                 <div class="bar">
                     <div class="time">
-                        <div class="current__time">123</div>
-                        <div class="song__duration">123</div>
+                        <div class="current__time"></div>
+                        <div class="song__duration"></div>
                     </div>
 
-                    <input type="range" name="progress__bar" class="progress__bar" min="0" , max="200">
+                    <input type="range" name="progress__bar" class="progress__bar" min="0" , max="1", value="0">
 
 
                 </div>
@@ -63,7 +65,8 @@
             <a href="https://github.com/Mariakravchenko2204"><img src="./assets/svg/github-mark.svg" alt="github"></a>
         </div>
     </footer>
-
+    <script type="text/javascript" src="./assets/data/songs.js"></script>
+    <script src="./index.js"></script>
 
 </body>
 
