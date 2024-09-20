@@ -7,21 +7,23 @@ html {
     padding: 0;
 }
 
-.background {
-    width: 100vw;
-    height: 100vh;
-    background-image: url("./assets/img/dontstartnow.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+
+
+#bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     filter: blur(8px);
     position: absolute;
     z-index: -1;
+   
+    
 }
 
 .wrap {
 
     height: calc(100vh - 120px);
-    width: 100vw;
+    width: 100%;
 
     display: flex;
     align-items: center;
@@ -42,6 +44,10 @@ html {
     filter: invert(100%);
     width: 30px;
     height: 30px;
+}
+
+.player__navigation:hover{
+    cursor: pointer;
 }
 
 .play {
