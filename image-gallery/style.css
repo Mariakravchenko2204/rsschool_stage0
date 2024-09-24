@@ -51,17 +51,47 @@
     cursor: pointer;
 }
 
-.images {
-    height: calc(100vh - 200px);
+.images{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+.image__container {   
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    /* height: calc(100vh - 200px); */
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    
+}
+
+.img__element {
+    width: 400px;
+    height: 230px;
+}
+
+.footer__wrapper {
+    width: 1280px;
+    margin: 0 auto;
+
 }
 
 footer {
+  
     height: 100px;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background: -webkit-linear-gradient(20deg, #619B8A, #94BFA7);
+   
 
 }
 
