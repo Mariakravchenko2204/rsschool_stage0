@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    height: 100px;
+    width: 100%;
+    background: -webkit-linear-gradient(20deg, #619B8A, #94BFA7);
+    border-bottom: solid 3px #619B8A;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo__text {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.input {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.search__button {
+    width: 35px;
+    height: 35px; 
+}
+
+.remove__text {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 220px;
+    top: 8px;
+}
+
+.remove__text:hover {
+    cursor: pointer;
+}
+
+.search__button:hover {
+    cursor: pointer;
+}
+
+.images {
+    max-width: 1280px;
+    min-height: calc(100vh - 200px);
+    margin: 0 auto;
+}
+
+
+.image__container {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.img__element {
+    width: 400px;
+    height: 230px;
+}
+
+
+.pagination__buttons {
+    margin: 10px auto; 
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    height: 50px;
+}
+
+.button {
+    height: 50px;
+    width: 50px;
+    border: 2px solid #619B8A;
+    border-radius: 50%;
+}
+
+.inactive {
+    pointer-events: none;
+    border: 2px solid grey;
+}
+
+.current {
+    pointer-events: none;
+}
+
+
+footer {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: -webkit-linear-gradient(20deg, #619B8A, #94BFA7);
+}
+
+.footer__wrapper {
+    width: 1280px;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.rss-logo {
+    height: 80px;
+
+}
+
+.github {
+    height: 80px;
+}
+
+.year {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 400;
+}
+
+@media (max-width : 1280px) {
+    .wrapper {
+        width: 80%;
+    }
+}
+
+@media (max-width : 700px) {
+    .wrapper {
+        flex-direction: column;
+        gap: 20px;
+        align-content: center;
+
+    }
+
+    .header {
+        height: 180px;
+    }
+}
