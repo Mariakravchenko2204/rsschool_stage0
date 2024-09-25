@@ -6,7 +6,6 @@
 .header {
     height: 100px;
     width: 100%;
-
     background: -webkit-linear-gradient(20deg, #619B8A, #94BFA7);
     border-bottom: solid 3px #619B8A;
 }
@@ -30,7 +29,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 
@@ -39,17 +37,12 @@
     display: flex;
     align-items: center;
     gap: 10px;
-
     position: relative;
-
 }
 
 .search__button {
     width: 35px;
-    height: 35px;
-    /* position: absolute;
-    left: 210px;
-    top : 4px; */
+    height: 35px; 
 }
 
 .remove__text {
@@ -58,7 +51,6 @@
     position: absolute;
     left: 220px;
     top: 8px;
-
 }
 
 .remove__text:hover {
@@ -81,13 +73,11 @@
     padding-top: 20px;
     padding-bottom: 20px;
     margin: 0 auto;
-    /* height: calc(100vh - 200px); */
     height: auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
-
 
 }
 
@@ -98,8 +88,7 @@
 
 
 .pagination__buttons {
-    margin: 0 auto;
-    margin-bottom: 10px;
+    margin: 10px auto; 
     display: flex;
     justify-content: space-between;
     width: 200px;
@@ -107,7 +96,6 @@
 }
 
 .button {
-
     height: 50px;
     width: 50px;
     border: 2px solid #619B8A;
@@ -116,6 +104,7 @@
 
 .inactive {
     pointer-events: none;
+    border: 2px solid grey;
 }
 
 .current {
@@ -123,18 +112,13 @@
 }
 
 
-
-
 footer {
-
     height: 100px;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background: -webkit-linear-gradient(20deg, #619B8A, #94BFA7);
-
-
 }
 
 .footer__wrapper {
@@ -144,7 +128,6 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
 
 
@@ -171,23 +154,14 @@ footer {
 }
 
 @media (max-width : 700px) {
-
     .wrapper {
         flex-direction: column;
-
         gap: 20px;
         align-content: center;
 
     }
 
-
-
     .header {
         height: 180px;
     }
-
-
-
-
-
 }
