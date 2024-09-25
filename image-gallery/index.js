@@ -15,7 +15,6 @@ async function getPhotos() {
     fetch(`https://api.unsplash.com/search/photos?query=${query}&page=${page}&per_page=18&orientation=landscape&client_id=dbXTMWsnem3eDUnb3j7Kva8_XcWwF7NCZYWt06_6bKk`)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
             totalPages = data.total_pages;
             img__container.innerHTML = '';
             data.results.map(e => {
@@ -42,6 +41,8 @@ searchButton.addEventListener('click', () => {
         getPhotos('Canada')
     }else{
         query = inputForm.value;
+        page = 1;
+        current.innerHTML = page;
         getPhotos();
     }
     
@@ -53,6 +54,8 @@ inputForm.addEventListener('keyup', (event) => {
             getPhotos('Canada')
         }else{
             query = inputForm.value;
+            page = 1;
+            current.innerHTML = page;
             getPhotos();
         }
     }
