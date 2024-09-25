@@ -29,36 +29,54 @@
     height: auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;  
-   
+    align-items: center;
+
 }
 
 
 .input {
-    width: 250px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     position: relative;
-   
+
 }
 
 .search__button {
-    width: 30px;
-    position: absolute;
+    width: 35px;
+    height: 35px;
+    /* position: absolute;
     left: 210px;
-    top : 4px;
+    top : 4px; */
 }
 
-.search__button:hover{
+.remove__text {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 220px;
+    top: 8px;
+
+}
+
+.remove__text:hover {
     cursor: pointer;
 }
 
-.images{
+.search__button:hover {
+    cursor: pointer;
+}
+
+.images {
     max-width: 1280px;
     min-height: calc(100vh - 200px);
     margin: 0 auto;
 }
 
 
-.image__container {   
+.image__container {
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -70,7 +88,7 @@
     flex-wrap: wrap;
     gap: 20px;
 
-    
+
 }
 
 .img__element {
@@ -79,16 +97,43 @@
 }
 
 
+.pagination__buttons {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    height: 50px;
+}
+
+.button {
+
+    height: 50px;
+    width: 50px;
+    border: 2px solid #619B8A;
+    border-radius: 50%;
+}
+
+.inactive {
+    pointer-events: none;
+}
+
+.current {
+    pointer-events: none;
+}
+
+
+
 
 footer {
-  
+
     height: 100px;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background: -webkit-linear-gradient(20deg, #619B8A, #94BFA7);
-   
+
 
 }
 
@@ -98,15 +143,15 @@ footer {
     height: auto;
     display: flex;
     justify-content: space-around;
-    align-items: center;  
-   
+    align-items: center;
+
 }
 
 
 
-.rss-logo{
+.rss-logo {
     height: 80px;
-    
+
 }
 
 .github {
@@ -127,20 +172,22 @@ footer {
 
 @media (max-width : 700px) {
 
-    .wrapper{ 
+    .wrapper {
         flex-direction: column;
-       
+
         gap: 20px;
         align-content: center;
-        
+
     }
 
-   
 
-    .header { height: 180px;}
 
-    
+    .header {
+        height: 180px;
+    }
 
-   
-    
+
+
+
+
 }
