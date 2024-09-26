@@ -6,7 +6,7 @@ const nextButton = document.querySelector(".next");
 const current = document.querySelector(".current");
 const prevButton = document.querySelector(".prev");
 let page = 1;
-let query = 'Canada';
+let query = 'Ukraine';
 let maxPages = 5;
 
 
@@ -35,29 +35,33 @@ function createImgElement(link, linkFull) {
 }
 
 
-getPhotos('Canada')
+getPhotos()
 
 
 searchButton.addEventListener('click', () => {
 
-    if(inputForm.value === ''){
-        getPhotos('Canada')
-    }else{
+    if (inputForm.value === '') {
+        getPhotos()
+    } else {
         query = inputForm.value;
         page = 1;
+        prevButton.classList.add('inactive');
+        nextButton.classList.remove('inactive');
         current.innerHTML = page;
         getPhotos();
     }
-    
+
 })
 
 inputForm.addEventListener('keyup', (event) => {
     if (event.keyCode === 13) {
-        if(inputForm.value === ''){
-            getPhotos('Canada')
-        }else{
+        if (inputForm.value === '') {
+            getPhotos()
+        } else {
             query = inputForm.value;
             page = 1;
+            prevButton.classList.add('inactive');
+            nextButton.classList.remove('inactive');
             current.innerHTML = page;
             getPhotos();
         }
@@ -74,7 +78,7 @@ nextButton.addEventListener('click', () => {
     current.innerHTML = page;
     getPhotos();
     prevButton.classList.remove('inactive');
-    if(page === maxPages){
+    if (page === maxPages) {
         nextButton.classList.add('inactive')
     }
 })
@@ -84,7 +88,7 @@ prevButton.addEventListener('click', () => {
     current.innerHTML = page;
     getPhotos();
     nextButton.classList.remove('inactive')
-    if(page === 1){
+    if (page === 1) {
         prevButton.classList.add('inactive');
     }
 })

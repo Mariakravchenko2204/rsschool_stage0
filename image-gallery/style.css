@@ -105,6 +105,7 @@
 .inactive {
     pointer-events: none;
     border: 2px solid grey;
+    cursor: not-allowed;
 }
 
 .current {
