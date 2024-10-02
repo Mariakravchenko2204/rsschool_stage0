@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    background: url("./assets/img/snake.jpeg");
+    background-size: cover;
+    display: flex;
+    overflow: hidden;
+
+}
+
+.game__field {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 800px;
+    background-color: #E2EFDE;
+
+    border-radius: 50px;
+    margin: auto auto;
+    align-self: center;
+}
+
+.game__info {
+    width: 500px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game__title {
+    margin: 0 auto;
+    margin-top: 30px;
+    font-family: "Sixtyfour Convergence", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+
+h3, p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.game__board {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    opacity: 100%;
+    background-color: #06D6A0;
+}
+
+.score {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    margin: 0 auto;
+}
+
+.reset {
+    width: 150px;
+    height: 50px;
+    border: 2px solid;
+    border-radius: 30px;
+    margin: auto;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
