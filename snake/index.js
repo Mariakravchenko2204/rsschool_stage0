@@ -10,6 +10,9 @@ let isRunning = false;
 let xDirection = ceilSize;
 let yDirection = 0;
 let score = 0;
+const fildSize = 300;
+let currentDirection = 'right';
+const audioEatApple = new Audio("assets/audio/poedanie-ukus-yabloka.mp3")
 
 const generateAppleCoordinates = (max, min) => {
     xAppleCoordinate = Math.floor(Math.random() * (max / ceilSize - min)) * ceilSize;
@@ -41,7 +44,7 @@ const drawSnake = () => {
 
 const startGame = () => {
     isRunning = true;
-    generateAppleCoordinates(500, 0);
+    generateAppleCoordinates(fildSize, 0);
     drawApple(xAppleCoordinate, yAppleCoordinate);
     generateSnake()
     drawSnake();
@@ -49,9 +52,36 @@ const startGame = () => {
     loop();
 }
 
+
+
+const moveSnake = () => {
+    const newHeadX = snake[0][0] + xDirection;
+    const newHeadY = snake[0][1] + yDirection;
+    snake.unshift([newHeadX, newHeadY]);
+
+    if (newHeadX === xAppleCoordinate && newHeadY === yAppleCoordinate) {
+        audioEatApple.play()
+        generateAppleCoordinates(fildSize, 0);
+        score += 1;
+        scoreElement.innerHTML= score
+        //add score
+    } else {
+        const tail = snake[snake.length - 1]
+        clearField(tail[0], tail[1])
+        snake.pop()
+    }
+
+}
+
+const clearField = (x,y) => {
+    context.fillStyle = '#06D6A0';
+    context.fillRect(x, y, ceilSize, ceilSize);   
+
+}
+
 const loop = () => {
     if (isRunning) {
-        clearField()
+        // clearField()
         drawApple(xAppleCoordinate, yAppleCoordinate);
         drawSnake();
         moveSnake();
@@ -63,51 +93,34 @@ const loop = () => {
 
 }
 
-const moveSnake = () => {
-    const newHeadX = snake[0][0] + xDirection;
-    const newHeadY = snake[0][1] + yDirection;
-    snake.unshift([newHeadX, newHeadY]);
-
-    if (newHeadX === xAppleCoordinate && newHeadY === yAppleCoordinate) {
-        generateAppleCoordinates(500, 0);
-        score += 1;
-        scoreElement.innerHTML= score
-        //add score
-    } else {
-        snake.pop()
-    }
-
-}
-
-const clearField = () => {
-    context.fillStyle = '#06D6A0';
-    context.fillRect(0, 0, 500, 500)
-}
-
 startGame();
 
 
 window.addEventListener('keydown', (event) => {
-    console.log(event.key);
+    console.log();
 
-    if (event.key === 'ArrowDown') {
+    if (event.key === 'ArrowDown' && currentDirection !== 'down') {
         yDirection += ceilSize;
         xDirection = 0
+        currentDirection = 'down';
     }
 
-    if (event.key === 'ArrowUp') {
+    if (event.key === 'ArrowUp' && currentDirection !== 'up') {
         yDirection -= ceilSize;
-        xDirection = 0
+        xDirection = 0;
+        currentDirection = 'up';
     }
 
-    if (event.key === 'ArrowLeft') {
+    if (event.key === 'ArrowLeft' && currentDirection !== 'left') {
         yDirection = 0;
-        xDirection -= ceilSize
+        xDirection -= ceilSize;
+        currentDirection = 'left';
     }
 
-    if (event.key === 'ArrowRight') {
+    if (event.key === 'ArrowRight' && currentDirection !== 'right' ) {
         yDirection = 0;
-        xDirection += ceilSize
+        xDirection += ceilSize;
+        currentDirection = 'right';
     }
 
 
