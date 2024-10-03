@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+
 .page {
     width: 100vw;
     height: 100vh;
@@ -19,7 +20,7 @@
     width: 600px;
     height: 800px;
     background-color: #E2EFDE;
-
+   
     border-radius: 50px;
     margin: auto auto;
     align-self: center;
@@ -49,11 +50,11 @@ h3, p {
 }
 
 .game__board {
-    width: 500px;
-    height: 500px;
+  
     margin: 0 auto;
     opacity: 100%;
     background-color: #06D6A0;
+    border: 2px solid black;
 }
 
 .score {
