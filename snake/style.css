@@ -42,7 +42,7 @@
     font-weight: 400;
 }
 
-h3, p {
+.timer, .name {
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-style: normal;
