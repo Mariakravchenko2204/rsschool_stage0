@@ -10,7 +10,7 @@ let isRunning = false;
 let xDirection = ceilSize;
 let yDirection = 0;
 let score = 0;
-const fildSize = 300;
+const fildSize = 400;
 let currentDirection = 'right';
 const audioEatApple = new Audio("assets/audio/poedanie-ukus-yabloka.mp3")
 
@@ -36,11 +36,49 @@ const generateSnake = () => {
 }
 
 const drawSnake = () => {
-    context.fillStyle = "red";
-    snake.map((e) => {
-        context.fillRect(e[0], e[1], ceilSize, ceilSize)
-    })
+
+    for (let i = 0; i < snake.length; i++) {
+        if (i === 0) {
+            context.fillStyle = "yellow";
+
+        } else {
+            context.fillStyle = "red";
+        }
+        context.fillRect(snake[i][0], snake[i][1], ceilSize, ceilSize)
+    }
+
+
+    // snake.map((e) => {
+    //     if(snake.indexOf(e) === Array.lastIndexOf(snake)){
+    //         context.fillStyle = "yellow";
+    //         console.log("head", e)
+    //     }else{
+    //         context.fillStyle = "red";
+    //     }
+
+    //     context.fillRect(e[0], e[1], ceilSize, ceilSize)
+    // })
 }
+
+const checkHitWall = () => {
+    const head = snake[0];
+    console.log(head)
+    if (head[0] < 0 || head[0] > fildSize || head[1] < 0 || head[1] > fildSize) {
+        isRunning = false;
+    }
+}
+
+const checkHitItSelf = () => {
+    const head = snake[0];
+
+    for (let i = 1; i < snake.length; i++) {
+        if (head[0] === snake[i][0] && head[1] === snake[i][1]) {
+            isRunning = false;
+        }
+    }
+}
+
+
 
 const startGame = () => {
     isRunning = true;
@@ -63,7 +101,7 @@ const moveSnake = () => {
         audioEatApple.play()
         generateAppleCoordinates(fildSize, 0);
         score += 1;
-        scoreElement.innerHTML= score
+        scoreElement.innerHTML = score
         //add score
     } else {
         const tail = snake[snake.length - 1]
@@ -73,21 +111,27 @@ const moveSnake = () => {
 
 }
 
-const clearField = (x,y) => {
+const clearField = (x, y) => {
     context.fillStyle = '#06D6A0';
-    context.fillRect(x, y, ceilSize, ceilSize);   
+    context.fillRect(x, y, ceilSize, ceilSize);
 
 }
 
 const loop = () => {
     if (isRunning) {
-        // clearField()
+
         drawApple(xAppleCoordinate, yAppleCoordinate);
         drawSnake();
+
+
         moveSnake();
-        setTimeout(loop, 200)
+        checkHitWall();
+        checkHitItSelf()
+
+        setTimeout(loop, 300)
     } else {
-        stopGame();
+        console.log("game over")
+
     }
 
 
@@ -117,7 +161,7 @@ window.addEventListener('keydown', (event) => {
         currentDirection = 'left';
     }
 
-    if (event.key === 'ArrowRight' && currentDirection !== 'right' ) {
+    if (event.key === 'ArrowRight' && currentDirection !== 'right') {
         yDirection = 0;
         xDirection += ceilSize;
         currentDirection = 'right';
