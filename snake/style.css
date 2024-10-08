@@ -17,8 +17,8 @@
 .game__field {
     display: flex;
     flex-direction: column;
-    width: 450px;
-    background-color: #E2EFDE;
+    width: 700px;
+    background-color: rgba(93, 140, 233, 0.7);
    
     border-radius: 50px;
     margin: auto auto;
@@ -52,8 +52,9 @@
   
     margin: 0 auto;
     opacity: 100%;
-    background-color: #06D6A0;
+    background-color: #FFFD70;
     border: 2px solid black;
+    margin-bottom: 30px;
 }
 
 .score {
@@ -64,13 +65,115 @@
     margin: 0 auto;
 }
 
-.reset {
-    width: 80px;
-    height: 30px;
-    border: 2px solid;
-    border-radius: 30px;
+.reset, .home {
+    width: 150px;
+    height: 40px;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     cursor: pointer;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+
+.popup__wrapper, .end__game__wrapper{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+
+}
+
+.hidden{
+    display: none;
+}
+
+.start__popup, .end__game{
+    width: 600px;
+    height: 600px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background: rgba(238, 233, 233, 0.7);
+    /* border: 2px solid #133C55; */
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.label{
+    margin-top: 40px;
+
+}
+
+h2{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    text-align: center;
+}
+
+#userName {
+    width: 350px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 40px;
+   
+}
+
+#submit__button{
+    width: 200px;
+    margin: 20px auto;
+}
+
+.snake__img{
+    height: 50%;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.end__game {
+    height: 700px;
+}
+
+.game__over {
+    margin-top: 30px;
+}
+
+.statictics__title{
+    margin: 0 auto;
+}
+
+.statistics {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.statistics p {
+    margin: 0 auto;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    font-style: normal;
+}
+
+.result {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    text-align: center;
+    margin: 15px;
+}
+
+.buttons {
+    margin: 0 auto;;
+}
+
+

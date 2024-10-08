@@ -12,13 +12,27 @@ let isRunning = false;
 let xDirection = ceilSize;
 let yDirection = 0;
 let score = 0;
-const fildSize = 400;
+const fildSize = 600;
 let currentDirection = 'right';
 const audioEatApple = new Audio("assets/audio/poedanie-ukus-yabloka.mp3");
 let gameSpeed = 300;
 let gameLoop = {};
 let gameTime = 0;
 let gameTimer = {};
+const fieldColor = '#FFFD70';
+
+
+const inputField = document.querySelector("#userName")
+const popup = document.querySelector(".popup__wrapper");
+const endGame = document.querySelector(".end__game__wrapper")
+const submit__button = document.querySelector("#submit__button");
+const userName = document.querySelector(".name");
+const gameField = document.querySelector(".game__field");
+const result = document.querySelector(".result");
+const home = document.querySelector(".home");
+const gameResult = localStorage.getItem('result') === null ? localStorage.setItem('result', JSON.stringify([])) : localStorage.getItem('result');
+const statistics = document.querySelector('.statistics');
+let uName = '';
 
 const generateAppleCoordinates = (max, min) => {
 
@@ -44,11 +58,31 @@ const drawApple = (x, y) => {
 }
 
 const displayGameOver = () => {
-    const image = new Image();
-    image.onload = function () {
-        context.drawImage(image, fildSize/2 - 96/2, fildSize/2 - 96/2)
+    
+    result.innerHTML = `Your result : ${score}`;
+
+    const gameResult = JSON.parse(localStorage.getItem('result'));
+
+
+    if (gameResult.length === 10 || gameResult.length > 10 ){
+        gameResult.shift();
+        
     }
-    image.src = "assets/img/icons8-game-over-96.png";
+    gameResult.push({
+        name : uName,
+        result : score,
+    })
+    
+    statistics.innerHTML = '';
+    for (let i = 0; i < gameResult.length; i++){
+        const p = document.createElement('p');
+        p.innerHTML = `${i + 1}. ${gameResult[i].name} : ${gameResult[i].result}`;
+        statistics.appendChild(p);
+    }
+  
+
+    localStorage.setItem('result', JSON.stringify(gameResult));
+    endGame.classList.toggle('hidden')
 
 }
 
@@ -62,14 +96,11 @@ const generateSnake = () => {
 }
 
 const drawSnake = () => {
-
+    context.fillStyle = "#1645A2";
     for (let i = 0; i < snake.length; i++) {
-        if (i === 0) {
-            context.fillStyle = "yellow";
+      
 
-        } else {
-            context.fillStyle = "red";
-        }
+        
         context.fillRect(snake[i][0], snake[i][1], ceilSize, ceilSize)
     }
 
@@ -94,7 +125,7 @@ const checkHitItSelf = () => {
     }
 }
 
-const countGameTime =  () => {
+const countGameTime = () => {
     gameTime++;
     const minutes = Math.floor(gameTime / 60);
     const seconds = gameTime - minutes * 60;
@@ -105,17 +136,20 @@ const countGameTime =  () => {
 
 
 const startGame = () => {
-     timer.innerHTML = `Timer : 00:00`
+    const user = localStorage.getItem('username');
+    userName.innerHTML = `Name : ${user}`;
+    timer.innerHTML = `Timer : 00:00`
     gameTimer = setInterval(countGameTime, 1000);
     xDirection = ceilSize;
     yDirection = 0;
+    gameSpeed = 300;
     generateSnake()
     generateAppleCoordinates(fildSize, 0);
     drawApple(xAppleCoordinate, yAppleCoordinate);
     drawSnake();
     isRunning = true;
     loop();
-    
+
 }
 
 
@@ -130,11 +164,11 @@ const moveSnake = () => {
         generateAppleCoordinates(fildSize, 0);
         score += 1;
         clearTimeout(gameLoop);
-        if (gameSpeed > 50){
+        if (gameSpeed > 50) {
             gameSpeed = gameSpeed - 10;
         }
         scoreElement.innerHTML = score;
-       
+
         //add score
     } else {
         const tail = snake[snake.length - 1]
@@ -144,12 +178,12 @@ const moveSnake = () => {
 }
 
 const clearField = (x, y) => {
-    context.fillStyle = '#06D6A0';
+    context.fillStyle = fieldColor;
     context.fillRect(x, y, ceilSize, ceilSize);
 }
 
 const clearBoard = () => {
-    context.fillStyle = '#06D6A0';
+    context.fillStyle = fieldColor;
     context.fillRect(0, 0, fildSize, fildSize);
 }
 
@@ -168,7 +202,25 @@ const loop = () => {
     }
 }
 
-startGame();
+const submitUserName = () => {
+    if (inputField.value !== "") {
+        uName = inputField.value;
+    }
+    clearBoard();
+    clearTimeout(gameLoop);
+    clearInterval(gameTimer);
+    score = 0;
+    currentDirection = 'right'
+    scoreElement.innerHTML = score;
+    gameTime = 0;
+    localStorage.setItem("username", inputField.value);
+    popup.classList.toggle('hidden');
+    gameField.classList.toggle('hidden')
+
+    startGame();
+}
+
+
 
 window.addEventListener('keydown', (event) => {
 
@@ -198,19 +250,39 @@ window.addEventListener('keydown', (event) => {
 })
 
 resetButton.addEventListener("click", () => {
-    isRunning = false;
+    // isRunning = false;
+    console.log("pressed reset")
     clearBoard();
     clearTimeout(gameLoop);
     clearInterval(gameTimer);
     score = 0;
     currentDirection = 'right'
     scoreElement.innerHTML = score;
-    gameTime = 0; 
-
+    gameTime = 0;
+    endGame.classList.toggle('hidden');
+   
+  
     startGame();
 })
 
 
 
 
+submit__button.addEventListener('click', () => {
+    submitUserName()
 
+})
+
+window.addEventListener('keyup', (event) => {
+    if(event.key === 'Enter'){
+        submitUserName()
+    }
+})
+
+home.addEventListener('click', () => {
+
+    inputField.value = '';
+    endGame.classList.toggle('hidden');
+    gameField.classList.toggle('hidden')
+    popup.classList.toggle('hidden');
+})
