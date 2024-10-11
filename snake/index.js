@@ -22,6 +22,7 @@ let gameLoop = {};
 let gameTime = 0;
 let gameTimer = {};
 const fieldColor = '#FFFD70';
+let isOnStartPage = true;
 
 
 const inputField = document.querySelector("#userName")
@@ -164,21 +165,29 @@ const loop = () => {
 }
 
 const submitUserName = () => {
-    if (inputField.value !== "") {
+   
+    if (inputField.value !== "" ) {
         uName = inputField.value;
+        
+        clearBoard();
+        clearTimeout(gameLoop);
+        clearInterval(gameTimer);
+        score = 0;
+        currentDirection = 'right'
+        scoreElement.innerHTML = score;
+        gameTime = 0;
+        localStorage.setItem("username", inputField.value);
+        popup.style.animationName = 'dissapear';
+        popup.classList.toggle('hidden');
+        gameField.classList.toggle('hidden')
+        startGame();
+    } else {
+        
+        alert("You must enter the name")
     }
-    clearBoard();
-    clearTimeout(gameLoop);
-    clearInterval(gameTimer);
-    score = 0;
-    currentDirection = 'right'
-    scoreElement.innerHTML = score;
-    gameTime = 0;
-    localStorage.setItem("username", inputField.value);
-    popup.style.animationName = 'dissapear';
-    popup.classList.toggle('hidden');
-    gameField.classList.toggle('hidden')
-    startGame();
+    
+   
+
 }
 
 const displayGameOver = () => {
@@ -241,14 +250,20 @@ submit__button.addEventListener('click', () => {
 })
 
 window.addEventListener('keyup', (event) => {
-    if (event.key === 'Enter') {
-        submitUserName()
+    if(isOnStartPage){
+        if (event.key === 'Enter') {
+            submitUserName()
+            isOnStartPage = false;
+        }
     }
-})
+    }
+)
+   
 
 home.addEventListener('click', () => {
     inputField.value = '';
     endGame.classList.toggle('hidden');
     gameField.classList.toggle('hidden')
     popup.classList.toggle('hidden');
+    isOnStartPage = true;
 })
