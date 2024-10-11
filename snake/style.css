@@ -189,3 +189,34 @@ h2{
     display: flex;
     gap: 20px;
 }
+
+footer {
+    margin-top: -100px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.footer__wrapper {
+    width: 1280px;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.year {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 400;
+    color: #A2AAB9;
+}
+
+.rss-logo, .github {
+    height: 50px;
+    filter: invert(60);
+}
