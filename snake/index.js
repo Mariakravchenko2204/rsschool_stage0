@@ -15,6 +15,8 @@ let score = 0;
 const fildSize = 600;
 let currentDirection = 'right';
 const audioEatApple = new Audio("assets/audio/poedanie-ukus-yabloka.mp3");
+const audioStartGame = new Audio("assets/audio/game_start.mp3");
+const audioEndGame = new Audio("assets/audio/game_over.mp3");
 let gameSpeed = 300;
 let gameLoop = {};
 let gameTime = 0;
@@ -37,11 +39,9 @@ let uName = '';
 const generateAppleCoordinates = (max, min) => {
 
     let foundUnique = false
-
     while (!foundUnique) {
         xAppleCoordinate = Math.floor(Math.random() * (max / ceilSize - min)) * ceilSize;
         yAppleCoordinate = Math.floor(Math.random() * (max / ceilSize - min)) * ceilSize;
-
         snake.map(e => {
             if (e[0] !== xAppleCoordinate && e[1] !== yAppleCoordinate) {
                 foundUnique = true;
@@ -57,35 +57,6 @@ const drawApple = (x, y) => {
     image.src = "assets/img/icons8-apple-48.png";
 }
 
-const displayGameOver = () => {
-    
-    result.innerHTML = `Your result : ${score}`;
-
-    const gameResult = JSON.parse(localStorage.getItem('result'));
-
-
-    if (gameResult.length === 10 || gameResult.length > 10 ){
-        gameResult.shift();
-        
-    }
-    gameResult.push({
-        name : uName,
-        result : score,
-    })
-    
-    statistics.innerHTML = '';
-    for (let i = 0; i < gameResult.length; i++){
-        const p = document.createElement('p');
-        p.innerHTML = `${i + 1}. ${gameResult[i].name} : ${gameResult[i].result}`;
-        statistics.appendChild(p);
-    }
-  
-
-    localStorage.setItem('result', JSON.stringify(gameResult));
-    endGame.classList.toggle('hidden')
-
-}
-
 const generateSnake = () => {
     snake = [];
     snake.push([0, ceilSize * 4]);
@@ -98,19 +69,12 @@ const generateSnake = () => {
 const drawSnake = () => {
     context.fillStyle = "#1645A2";
     for (let i = 0; i < snake.length; i++) {
-      
-
-        
         context.fillRect(snake[i][0], snake[i][1], ceilSize, ceilSize)
     }
-
-
-
 }
 
 const checkHitWall = () => {
     const head = snake[0];
-
     if (head[0] < 0 || head[0] > fildSize || head[1] < 0 || head[1] > fildSize) {
         isRunning = false;
     }
@@ -136,6 +100,7 @@ const countGameTime = () => {
 
 
 const startGame = () => {
+    audioStartGame.play();
     const user = localStorage.getItem('username');
     userName.innerHTML = `Name : ${user}`;
     timer.innerHTML = `Timer : 00:00`
@@ -149,7 +114,6 @@ const startGame = () => {
     drawSnake();
     isRunning = true;
     loop();
-
 }
 
 
@@ -158,7 +122,6 @@ const moveSnake = () => {
     const newHeadX = snake[0][0] + xDirection;
     const newHeadY = snake[0][1] + yDirection;
     snake.unshift([newHeadX, newHeadY]);
-
     if (newHeadX === xAppleCoordinate && newHeadY === yAppleCoordinate) {
         audioEatApple.play()
         generateAppleCoordinates(fildSize, 0);
@@ -168,8 +131,6 @@ const moveSnake = () => {
             gameSpeed = gameSpeed - 10;
         }
         scoreElement.innerHTML = score;
-
-        //add score
     } else {
         const tail = snake[snake.length - 1]
         clearField(tail[0], tail[1])
@@ -214,34 +175,48 @@ const submitUserName = () => {
     scoreElement.innerHTML = score;
     gameTime = 0;
     localStorage.setItem("username", inputField.value);
+    popup.style.animationName = 'dissapear';
     popup.classList.toggle('hidden');
     gameField.classList.toggle('hidden')
-
     startGame();
 }
 
-
-
+const displayGameOver = () => {
+    audioEndGame.play();
+    result.innerHTML = `Your result : ${score}`;
+    const gameResult = JSON.parse(localStorage.getItem('result'));
+    if (gameResult.length === 10 || gameResult.length > 10) {
+        gameResult.shift();
+    }
+    gameResult.push({
+        name: uName,
+        result: score,
+    })
+    statistics.innerHTML = '';
+    for (let i = 0; i < gameResult.length; i++) {
+        const p = document.createElement('p');
+        p.innerHTML = `${i + 1}. ${gameResult[i].name} : ${gameResult[i].result}`;
+        statistics.appendChild(p);
+    }
+    localStorage.setItem('result', JSON.stringify(gameResult));
+    endGame.classList.toggle('hidden')
+}
 window.addEventListener('keydown', (event) => {
-
     if (event.key === 'ArrowDown' && currentDirection !== 'down') {
         yDirection += ceilSize;
         xDirection = 0
         currentDirection = 'down';
     }
-
     if (event.key === 'ArrowUp' && currentDirection !== 'up') {
         yDirection -= ceilSize;
         xDirection = 0;
         currentDirection = 'up';
     }
-
     if (event.key === 'ArrowLeft' && currentDirection !== 'left') {
         yDirection = 0;
         xDirection -= ceilSize;
         currentDirection = 'left';
     }
-
     if (event.key === 'ArrowRight' && currentDirection !== 'right') {
         yDirection = 0;
         xDirection += ceilSize;
@@ -250,8 +225,6 @@ window.addEventListener('keydown', (event) => {
 })
 
 resetButton.addEventListener("click", () => {
-    // isRunning = false;
-    console.log("pressed reset")
     clearBoard();
     clearTimeout(gameLoop);
     clearInterval(gameTimer);
@@ -260,27 +233,20 @@ resetButton.addEventListener("click", () => {
     scoreElement.innerHTML = score;
     gameTime = 0;
     endGame.classList.toggle('hidden');
-   
-  
     startGame();
 })
 
-
-
-
 submit__button.addEventListener('click', () => {
     submitUserName()
-
 })
 
 window.addEventListener('keyup', (event) => {
-    if(event.key === 'Enter'){
+    if (event.key === 'Enter') {
         submitUserName()
     }
 })
 
 home.addEventListener('click', () => {
-
     inputField.value = '';
     endGame.classList.toggle('hidden');
     gameField.classList.toggle('hidden')
