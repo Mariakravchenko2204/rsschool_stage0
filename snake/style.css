@@ -205,7 +205,8 @@ footer {
     margin: 0 auto;
     height: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 20px;
     align-items: center;
 }
 
