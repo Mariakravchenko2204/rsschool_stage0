@@ -23,27 +23,49 @@
                 <h1 class="logo__text">Unsplash API</h1>
             </div>
             <div class="input">
-                <img class="search__button" src="./assets/img/icons8-search-100.png" alt="search__button">
-                <input type="text" class="form-control" id="search__bar" placeholder="Search...">
-                
 
+                <input type="text" class="form-control" id="search__bar" placeholder="Search..." value=""
+                    autocomplete="off" autofocus="autofocus">
+                <img class="remove__text" src="./assets/img/icons8-x-40.png" alt="search__button">
+                <img class="search__button" src="./assets/img/icons8-search-100.png" alt="search__button">
             </div>
         </div>
     </section>
 
-    <section class="images"></section>
+    <section class="images">
+        <div class="image__container"></div>
+
+        <div class="pagination__buttons">
+            <button class="button prev inactive">&lt;</button>
+            <button class="button current">1</button>
+            <button class="button next">&gt;</button>
+        </div>
+
+
+    </section>
+
+
 
     <footer class="footer">
-        <h1 class="year">2024</h1>
-        <div class="logo">
-            <a href="https://rs.school/courses/javascript-preschool-ru"><img class="rss-logo"
-                    src="./assets/svg/rss-logo.svg" alt="rss-logo"></a>
+        <div class="footer__wrapper">
+
+            <h1 class="year">2024</h1>
+            <div class="logo">
+                <a href="https://rs.school/courses/javascript-preschool-ru"><img class="rss-logo"
+                        src="./assets/svg/rss-logo.svg" alt="rss-logo"></a>
+            </div>
+            <div class="github">
+                <a href="https://github.com/Mariakravchenko2204"><img class="github" src="./assets/svg/github-mark.svg"
+                        alt="github"></a>
+            </div>
+
         </div>
-        <div class="github">
-            <a href="https://github.com/Mariakravchenko2204"><img class="github" src="./assets/svg/github-mark.svg" alt="github"></a>
-        </div>
+
     </footer>
-   
+
+
+
+
     <script src="./index.js"></script>
 
 </body>
