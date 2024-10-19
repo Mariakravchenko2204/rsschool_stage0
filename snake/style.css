@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    background: url("./assets/img/snake.jpeg");
+    background-size: cover;
+    display: flex;
+    overflow: hidden;
+
+}
+
+.game__field {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    background-color: rgba(93, 140, 233, 0.7);
+    border-radius: 50px;
+    margin: auto auto;
+    align-self: center;
+    animation: appear 0.5s ease-in-out;
+}
+
+.game__info {
+    width: 400px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game__title {
+    margin: 0 auto;
+    margin-top: 30px;
+    font-family: "Sixtyfour Convergence", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+
+.timer, .name {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+    color: #e3e5e9;
+}
+
+.game__board {
+    margin: 0 auto;
+    opacity: 100%;
+    background-color: #FFFD70;
+    border: 2px solid black;
+    margin-bottom: 30px;
+}
+
+.score {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 45px;
+    margin: 0 auto;
+    color: #FFFD70;
+}
+
+.reset, .home {
+    width: 150px;
+    height: 40px;
+    margin: auto;
+    margin-bottom: 40px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.popup__wrapper, .end__game__wrapper{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes 
+    appear {
+        from {opacity: 0}
+        to {opacity: 1 }
+    }
+   
+.hidden{
+    display: none;
+}
+
+.start__popup, .end__game{
+    width: 600px;
+    height: 600px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background: rgba(161, 169, 186, 0.8)
+    ;
+    /* border: 2px solid #133C55; */
+    border-radius: 10px;
+    margin: 0 auto;
+    animation: appear 0.5s ease-in-out;
+}
+
+.label{
+    margin-top: 40px;
+}
+
+h2{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    text-align: center;
+}
+
+#userName {
+    width: 350px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+#submit__button{
+    width: 200px;
+    margin: 20px auto;
+}
+
+.snake__img{
+    height: 50%;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.end__game {
+    height: 500px;
+}
+
+.game__over {
+    margin-top: 30px;
+}
+
+.statictics__title{
+    margin: 0 auto;
+}
+
+.statistics {
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    margin: 20px;
+    border: 2px groove #A2AAB9;
+    background: #DCDFE5;
+}
+
+.statistics p {
+    margin: 0 auto;
+    font-family: "Roboto", sans-serif;
+    font-weight:  500;
+    font-size: 20px;
+    font-style: normal;
+   
+}
+
+.result {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    text-align: center;
+    margin: 15px;
+    color: #F1F8F9;
+}
+
+.buttons {
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+footer {
+    margin-top: -100px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.footer__wrapper {
+    width: 1280px;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+}
+
+.year {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 400;
+    color: #A2AAB9;
+}
+
+.rss-logo, .github {
+    height: 50px;
+    filter: invert(60);
+}
