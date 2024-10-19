@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    height: 100px;
+    width: 100vw;
+
+    background: -webkit-linear-gradient(20deg, #619B8A, #94BFA7);
+    border-bottom: solid 3px #619B8A;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo__text {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+   
+}
+
+
+.input {
+    width: 250px;
+    position: relative;
+   
+}
+
+.search__button {
+    width: 30px;
+    position: absolute;
+    left: 210px;
+    top : 4px;
+}
+
+.search__button:hover{
+    cursor: pointer;
+}
+
+.images {
+    height: calc(100vh - 200px);
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: -webkit-linear-gradient(20deg, #619B8A, #94BFA7);
+
+}
+
+
+
+.rss-logo{
+    height: 80px;
+    
+}
+
+.github {
+    height: 80px;
+}
+
+.year {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 400;
+}
+
+@media (max-width : 1280px) {
+    .wrapper {
+        width: 80%;
+    }
+}
+
+@media (max-width : 700px) {
+
+    .wrapper{ 
+        flex-direction: column;
+       
+        gap: 20px;
+        align-content: center;
+        
+    }
+
+   
+
+    .header { height: 180px;}
+
+    .images {
+        height: calc(100vh - 280px);
+    }
+    
+}
