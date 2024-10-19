@@ -1,0 +1,102 @@
+//slider
+
+/*
+generate the number of cards based on screen width 3 or 2 or 1
+put resize even listener and change the number of cards according the new size  < 1280 - 2 cards, < 768 - 1 card
+set prevCards array - populate it each time when the button is pressed => copy active cards  
+set lastClick variable if you go back show cards from prevClick 
+ 
+generate 2 arrays -> one for active, one for side - > array should be unique no repeated cards 
+when resize => delete or add cards  side array and active generateToArray(array) 
+
+
+when press right 
+
+if last click is left 
+
+=> add prevCards to the beginning 
+=> copy prev cards to active array (switch)
+=> copy active to  prevArray  
+=> move
+=> delete cards from the end html DOM
+=> set last click 
+=> generate side array 
+
+else
+
+=> add side cards to the beginning 
+=> copy active to  prevArray  
+=> copy side array to active array
+=> move 
+=> delete cards from the end of html DOM
+=> set last click 
+=> generate side array - > no dublicates with active array  generateSideCards(active) 
+
+
+
++++
+when pressed left
+
+if last click is left 
+=> add side cards to the end 
+
+=> copy active to  prevArray 
+=> copy side array to active array
+=> move 
+=> delete cards from the beginning 
+=> set last click 
+=> generate side array 
+
+
+if last click is right 
+
+=> add prevCards to the end 
+
+=> copy active to  prevArray 
+=> copy prev array to active array
+=> move
+=> delete cards from the beginning 
+=> set last click 
+=> generate side array 
+
+*/
+
+else{
+    
+
+}
+
+pagination 
+
+общее количество страниц при ширине экрана 1280px - 6, при 768px - 8, при 320px - 16 страниц
+ set card number 1280px - 8, 768 - 6, 320 - 3
+ calculate number of pages  48/ cardNumber
+ 
+ 34567012
+ 45670123
+ 56701234
+ 
+ 
+ 
+ if resize => recalculate number of pages
+ 
+ 
+ varable current page 1 when page renders
+ 
+ 
+ renderProducts(cards, size, page) {
+ 	
+ 	const firstCardIndes   size * page - size   8 * 1 - 8.    8
+ 	 	const lastCardIndex. firstindex + size - 1 7
+ 	
+ }
+ 	
+ when press >  page++, rerender page
+ when page == 1 set buttons < << to  not active
+ when page == pageNumber > >>  set buttons not active
+ 
+ when press >> open last page
+ 
+ when press << open first page
+ when < open previous page
+ 
